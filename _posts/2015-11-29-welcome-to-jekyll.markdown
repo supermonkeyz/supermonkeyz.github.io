@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to UXFAN!"
 date:   2015-11-29 16:59:41 +0800
 categories: jekyll update
 ---
