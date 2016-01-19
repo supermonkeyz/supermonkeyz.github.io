@@ -1,0 +1,390 @@
+---
+layout: post
+title:  "微博移动样式框架Marvel.css开发心得"
+date:   2016-1-19 16:59:41 +0800
+categories: fe css
+---
+![marvel.css](/images/marvel/1.png)
+ 
+2015，随着前端技术的发展，微博第一代移动样式库Brick似乎在可维护性、扩展性、高效性等方面都难以满足业务发展需求。于是我们着手完成了第二代移动样式库的搭建，marvel.css应运而生。之所以取名为marvel，一方面单词中文释义奇迹，另一方面Marvel Comic（漫威漫画）里面的超级英雄们也为广大群众喜闻乐见。这两方面将我们的愿景做了个很好的诠释，就是我们要建造一个好用的、适合不同团队一起使用的样式框架。在开发过程中，遇到了一些问题，收获了一些心得，下面就来聊聊marvel.css的成长过程。
+
+##前端脚手架
+前端是个不断折腾的岗位，nodejs的出现，让很多闲不下来的开发者（前端狗），又有很多东西可以玩（撸）。一时间grunt、gulp、webpack等一系列前端脚手架工具如雨后春笋般的冒了出来。页面开发也早不再是用Dreamweaver“托托拽拽”，Photoshop拼拼图那么简单了。在这自动化的时代，就不得不提提脚手架了。
+说到前端脚手架，什么是前端脚手架呢？其实就是用来处理前端静态资源开发的工具集合。很多公司都有自己开发的脚手架。至于脚手架的选择，网上有很多关于grunt gulp webpack等等的比较文章，grunt和gulp还都有各自的中文社区。谁优谁略，适合你的就是最好的，大家自行选择。marvel.css使用了gulp作为开发脚手架。`gulp-sass`、`gulp-autoprefixer`、`gulp-iconfont`、`gulp-svg-sprite`是在开发中处理静态资源主要运用到的工具。还有`browsersync`、`charles`在调试时也帮我们节省了很多时间。那下面就说说怎么用这些工具集合开发一个高效，适合多人协作的样式库。
+
+##文件目录结构
+开发目录是由font、js、scss、svg这几个目录构成的。
+
+{% highlight yaml %}
+font # 用于存放生成字体图标的svg源文件。
+js   # 用于存放屏幕适配js。
+scss # 用于存放scss文件,包含两个子文件夹。
+    lib  # 存放基础控件 
+    card # 存放weibo card模块
+svg  # 用于存放生成svg sprite的svg源文件。
+{% endhighlight %}
+
+编译生成后的文件目录
+
+{% highlight yaml %}
+font # 生成的字体图标文件 包括 woff2 woff svg eot ttf
+js   # 用于存放屏幕适配js
+css  # 用于存放生成的css文件
+img  # 用于存放生成的svg sprite
+{% endhighlight %}
+
+那么lib card又分别包含什么文件呢
+
+![lib card](/images/marvel/02.png)
+
+![lib](/images/marvel/03.png)
+
+![card](/images/marvel/04.png)
+
+说完了目录配置，下面就要说说代码的组织了。
+
+##使用预处理器处理样式
+样式预处理器`less` `sass` `stylus` `postcss`搞前端的或多或少都有所耳闻，同样也存在很多异议，一是对于样式是否有必要使用预处理器来管理，二是那么多工具哪个更胜一筹。我觉得样式预处理器对于管理一个项目来说还是很有必要的，至于选sass还是less还是其他那就看自己的需求，还有哪个用着顺手了。
+第一代微博移动样式库brick.css使用sass进行开发，marvel.css也同样使用了sass。
+预编译器最基础的使用方法:变量、嵌套，就已经很大程度的规范了代码。
+举个简单的例子，比如一个对话框模块，父容器为m-dialog的容器，它包含了h2 h3两个子元素。
+
+**scss**
+
+{% highlight scss %}
+.m-dialog{
+	position:fixed;
+	background:#fff;
+	h2{
+		font-size:18px;
+	}
+	h3{
+		font-size:14px;
+	}
+}
+{% endhighlight %}
+
+**css**
+
+{% highlight css %}
+.m-dialog{
+	position:fixed;
+	background:#fff;
+}
+.m-dialog h2 {
+	font-size:18px;
+}
+.m-dialog h3{
+	font-size:14px;
+}
+{% endhighlight %}
+
+scss嵌套组织形式很清晰的表现了代码的结构，尤其是在团队开发实践中，代码结构清晰，团队成员能很快的找到代码位置，新增代码片段时也减少了代码冲突的可能。
+
+有了规范的格式，项目中字号、字色、背景等属性都可抽出为全局变量写到了_var.scss。这样当设计有参数的变化时，我们只需要维护这个文件就可以改变对应属性在框架中的表现。
+
+在brick中文字的色值、字号等都单独写成了类，虽然在开发中使用起来很方便，而且也可以有限的减少代码量，但是类散落在模板文件里，维护起来会很困难，因为有时候我们难以控制一个项目中页面的数量。所以在marvel里，尽量将样式属性不做拆分，可拆出的变量尽量拆出。这样做虽然代码体积有所增加，但是维护起来要方便很多。
+
+**brick**
+
+{% highlight html %}
+<div class="box mct-c txt-s"></div>
+{% endhighlight%}
+{% highlight css %}
+.mct-c {color:#ccc;}
+.txt-s {font-size:12px;}
+{% endhighlight%}
+
+**marvel**
+
+{% highlight html %}
+<div class="box"></div>
+{% endhighlight%}
+{% highlight scss %}
+.box{ 
+	color: $cl-c;
+	font-size: $f12;
+}
+{% endhighlight%}
+
+brick里面如果box模块在多个页面中使用，如果文字颜色需要变化，那么要找到html模板中所有的字色类，然后一一修改。于是在开发marvel时为避免出现这个情况，尽可能的减少了类的抽出。
+
+除了方便维护外，其实利用sass还可以做到方便代码的新增。比如像**按钮**这类控件，有很多属性是相同的，不同的属性很好抽象出来。利用混合、循环、运算等方法就能更方便的实现代码。
+
+![button](/images/marvel/05.png)
+ 
+**基础部分**
+
+{% highlight scss %}
+.#{$button}{
+    text-align: center;
+    line-height:P2R(40px);
+    height: P2R(40px);
+    font-size:$f14;
+    border-radius: P2R(3px);
+    outline: 0;
+    display: inline-block;
+    min-width: P2R(70px);
+    box-sizing:border-box;
+    padding: 0;
+    &.#{$button}-block{
+      width: 100%;
+      display: block;
+    }
+}
+
+/*需要依次填写按钮名称 文字色 背景色 边框大小 边框颜色 激活色 激活边框*/
+$btn-types: (
+  (red  #fff  linear-gradient(to bottom, #f73b3b 0%,#f83232 100%) 0 transparent   linear-gradient(to bottom, #d93434 0%,#d92b2b 100%)  transparent)
+  (green  #fff  linear-gradient(to bottom, #18b52a 0%,#10b524 100%)  0 transparent   linear-gradient(to bottom, #149623 0%,#0e961e 100%)  transparent)
+  (orange  #fff  linear-gradient(to bottom, #ff890a 0%,#ff8200 100%)  0 transparent   linear-gradient(to bottom, #e07809 0%,#e07400 100%)  transparent)
+  (blue  #fff  linear-gradient(to bottom, #1a90ff 0%,#108cff 100%)  0 transparent   linear-gradient(to bottom, #167fe0 0%,#0d7ae0 100%) transparent )
+) !default;
+
+@each $btn-type in $btn-types {
+  $type:  nth($btn-type, 1);
+  $color: nth($btn-type, 2);
+  $color-bg: nth($btn-type, 3);
+  $btn-bd-w: nth($btn-type, 4);
+  $btn-bd-c: nth($btn-type, 5);
+  $color-at: nth($btn-type, 6);
+  $btn-bd-at: nth($btn-type, 7); 
+  .#{$button}-#{$type} {
+    @include btn($color,$color-bg,$btn-bd-w,$btn-bd-c,$color-at,$btn-bd-at);
+    &:disabled,
+    &.#{$button}-disabled{
+      color: rgba($color,.3);
+    }
+    &:disabled,
+    &.#{$button}-disabled{
+      &:active{
+        background: $color-bg;
+        border-color: $btn-bd-c;
+      }
+    }
+  }
+}
+
+
+{% endhighlight%}
+
+通过使用预编译器进行代码组织，使用sass的运算、混合宏、循环等方法的综合运用，新增一种类型的按钮就只需要在`$btn-types`这一项内根据注释写入新按钮的特性值，编译后对应的按钮代码便快速得到了。达到了迅速开发、方便维护的目的。在marvel中，除了按钮以外，tips icon等都使用了类似的方式管理代码。
+
+## 使用rem、em尺寸单位
+
+在移动浏览器时代，由于屏幕适配的需求愈加强烈，字号单位`em` 和新单位 `rem` 被广泛使用起来其实老外一直是非常很喜欢这个单位的，为了整体控制页面字号。那么为什么习惯了`px`了的我们突然爱上了`rem`。
+
+`rem`、`em`都是相对长度单位，rem是相对于根元素`font-size`计算值的倍数。也就是说它并不是一个绝对值，就是一个倍数。我们可以通过控制根元素的字号来整体的放大和缩小页面元素，这对不同设备的适配来说就是再好不过的了。
+
+marvel对`iPhone plus`，`iPad`进行了处理，根字号分别放大了`1.06`倍和`1.25`倍。
+
+那么`em`作为单位有什么用呢？`em`是相对于父元素字号计算出来倍数。那么如果控制父元素字号就可以轻松的对其子元素进行对应的缩放，这点便运用到了处理表单以及icon元素上。
+
+**父容器 font-size:1rem**
+
+![button](/images/marvel/06.png)
+
+**父容器 font-size:2rem**
+
+![button](/images/marvel/07.png)
+
+**scss**
+
+{% highlight scss %}
+.m-checkbox {
+	display: inline-block;
+	font-size: P2R(16px);
+	position: relative;
+	span{
+    	box-sizing:border-box;
+    	display: inline-block;
+    	@include border(border,1px,solid,#ccc);
+    	background: #fff;
+		width: P2M(18px);
+		height: P2M(18px);
+		line-height: P2M(18px);
+		margin: 0;
+		text-align: center;
+		overflow: hidden;
+		vertical-align: middle;
+    }
+    input[type="checkbox"]{
+    	opacity: 0;
+    	position: absolute;
+    	&:checked{
+    		+ span{
+    			.#{$front-icon-font}{
+    				display: inline-block;
+    			}
+    		}
+    	}
+    }
+    .#{$front-icon-font}{
+    	font-size: P2M(14px);
+    	display: none;
+    	color: #29c944;
+    }
+    em {
+    	font-size: $f13;
+    	color: $cl-c;
+    	vertical-align: middle;
+    }
+}
+{% endhighlight%}
+
+合理的使用`rem` `em` `px`单位，让我们在处理适配问题、增强代码复用度等等方面起到了很重要的作用，当然随着浏览器的发展，`vw`、`vh`等新的单位慢慢走向历史舞台，适配之路可能会稍微好走一些。
+
+## 不想妥协的1px Hairline
+关于1px Hairline，也就是高清设备上的**1像素细边**。 brick就已经做了处理。也就是现在线上[m.weibo.cn](http://m.weibo.cn) 的效果。当时是采用的background-image 50%透明50%边框色 background-size:1px 的解决方案。虽然在视觉上达到了满意的效果，但是后期开发、维护上真的是非常蛋疼。首先圆角基本作废，还要注意background不能被覆盖等问题，出现单线的情况也还要单独处理，这种解决方案很难让人满意。
+
+后来国内越来越多的移动站点都开始支持1px Hairline，网上也出现很多解决方案，比如border-image、shadow之类的。但感觉为了实现这个效果付出了极大的成本，即便是使用sass。
+
+在准备marvel的过程中，考虑到brick的局限性，我们打算放弃一部分设备的展示效果，借鉴手机淘宝团队使用动态调整`meta viewport`系数的方式来实现Hairline，但是后来开发过程中发现这种方式也同样存在很多的弊端，首先是基本放弃了px这个单位，而且这种解决方案感觉也是销足适履。
+
+细心的话会发现IOS8开始支持小数px为单位的值，考虑IOS8已经普及，而且调整meta viewport系数这方式安卓设备支持的也不好，那么何不一不做二不休只保证IOS8以上版本支持Hairline的效果。那么怎么实现呢?
+
+原理很简单，使用js判断IOS8以上的设备，2倍屏添加iosx2的类，3倍屏添加iosx3的类，然后通过继承分别控制border的尺寸。但是问题接踵而至，因为marvel并没有单独抽出一个控制线框的类，border属性散落在各个文件，这下就比较棘手了，不过幸亏有了sass。通过一个混合来处理border的问题。
+
+**scss**
+
+{% highlight scss %}
+@mixin border($bdv,$w,$s,$c){
+  #{$bdv}: $w $s $c;
+  @at-root .iosx2 &{
+       #{$bdv}: $w/2 $s $c;
+  }
+  @at-root .iosx3 &{
+       #{$bdv}: $w/2.8 $s $c;
+  }
+}
+.line{
+	@include border (border-bottom 1px solid #ccc)
+}
+{% endhighlight%}
+
+**css**
+
+{% highlight css %}
+.line{
+	border-bottom: 1px solid #ccc;
+}
+.iosx2 .line{
+	border-bottom: 0.5px solid #ccc
+}
+.iosx3 .line{
+	border-bottom: 0.35714px solid #ccc;
+}
+{% endhighlight%}
+
+至于为什么3倍屏要除以2.8，应该是由于plus像素压缩的问题，1242px压缩成了1080p，要是按照0.33px的话，那么线消失了，所以倍数换成了2.8…，对此知乎上也有讨论[https://www.zhihu.com/question/25288571](https://www.zhihu.com/question/25288571)。
+
+## 继续坚持弹性布局
+
+flexbox曲折的发展历史，N多个过度属性，让这个属性似乎只能存在于mixin中。每次调用混合也是非常麻烦，在marvel开发中，我们使用了`gulp-autoprefixer`这个插件，只需要写一个W3C属性，在编译过程中，就会根据can i use的数据生成一份支持大多数设备的属性。的确是方便了很多。因为css3里面的column不是非常靠谱，在开发有元素循环的card时候还是坚持了`inline-block`的布局方式。当然浮动的方式也可以。在万不得已的时候，还要使用一些`:nth-child`或者`:nth-of-type`选择器。面对移动浏览器可以放心大胆的使用选择器，这点千万不要忘记。
+
+## 字体图标的处理
+
+字体图标技术经过这一两年的发展已经十分成熟，Font Awesome这样的文字图标库很多前端开发者都有过尝试。很多站点也都有自己的图标库。正因为字体图标大小、颜色都非常容易控制，开发时候可以最大限度的减少资源的引用，使其倍受欢迎。那么问题随之而来，字体文件应该如何维护？很多人选择[icomoon.io](http://icomoon.io)、[iconfont.cn](http://iconfont.cn)这样的在线工具。但上传资源，下载字体包这个过程依然过于繁杂。
+
+marvel为了兼容性还是保留了字体图标的使用。开发中，通过`gulp-iconfont`，字体图标的维护成为了一件简单的事。只要将单个图标的svg文件按照unicode的编码规则对应命名，执行插件，便可得到woff2、woff、eot、svg、ttf等类型的字体文件，管理起来相当方便。不过在开发过程中也是踩到了坑，生成的ttf文件有些问题，某些安卓设备在使用时会出现图标缺失的情况[https://github.com/fontello/svg2ttf/issues/31](https://github.com/fontello/svg2ttf/issues/31)，最后调用了svg格式字体才解决了问题。
+
+## 让人又爱又恨的SVG图标
+为了适配高清屏，brick框架就已经放弃了png这个格式的图标，转而使用svg。作为矢量文件，一个资源可以满足任何场景，而且可以，着实节省了很多开发维护成本、以及带宽资源。彩色，便于控制，没有跨域问题，多种好处也让svg取代字体图标的呼声越来越强烈，更好的使用SVG图标也成了marvel开发要解决的问题。svg图标的引用也有多种方式，考虑到框架的维护性，在开发marvel时，我们想优先使用defs symbols的方法，通过插件生成合成文件，然后在dom中直接调用图标。然而兼容性问题，不得不让我们妥协。最后退而求其次使用了svg sprite，background定位的方式实现图标引用。使用gulp-svg-sprite插件可以将单个SVG图标拼合成整张大图。这点其实跟传统的css sprite没有什么差别。考虑到SVG的矢量特质，开发时的单独图标都调整成了10*10px（方便计算），然后每个图标间隔10px，图片拼合之后就是类似下图。
+
+![button](/images/marvel/08.png)
+ 
+通过简单运算，我们用公式很容易就能得到每个icon的`background-position`。
+
+{% highlight scss %}
+$spriteWidth:P2M(30px);
+$spriteHeight:auto;
+.#{$imageIcon} {
+    display: inline-block;
+    vertical-align: top;
+    @include svgGet('#{$imageIconPath}', 'svg', $spriteWidth,$spriteHeight);
+    width: P2M(10px);
+    height: P2M(10px);
+}
+/*按照顺序追加类名*/
+$sprite: yellowv bluev club vgirl male female vip nvip;
+@each $icon in $sprite {
+    .#{$imageIcon}-#{$icon} {  
+        background-position:P2M(-10px) P2M(-10px)-((index($sprite,$icon)-1)*P2M(30px));
+    }
+}
+{% endhighlight%}
+
+在SVG图标引用中，再次使用了em这个相对单位，因为这样通过调整父级容器的font-size我们可以得到任意大小的图标。基准字号为16px 那1rem的icon就是`10*10px`,想得到一个`14*14px`的图标的话，那么font-size设置成`1.4rem`（`14px/10px*1rem`）就可以了。这样看起来真的是很完美。但是当适配plus pad时，root `font-size`乘以`1.06`、`1.25`这样的系数后，以`em`为单位的各个属性值转化为`px`后就出现了小数，造成图标错位。
+
+解决这个问题只能放弃`rem`，使用`px`为字号单位，以一个14px的icon的适配为例，要解决这个问题，就要保证1.4*1.06取小数点后一位四舍五入后再乘以基准字号。更杯具的是图标并不是只有一种尺寸，也就是说系数不单是1.4还可能是1.8、2等等。这样如果要是进行适配的话每一种尺寸的图标对应plus pad都要有一份适配尺寸。一方面开发起来复杂，另一方面后期新增图标的时候，其他人增加图标时也可能出现漏项的情况，必须找到一种尽可能周全的代码组织方法。从适配的需求很容易能找到其中的逻辑关系，组织出合理的sass还是能解决问题的。
+
+{% highlight scss %}
+@mixin ic($device){
+	$sizes:(
+		(#{$imageIcon} 1.4)
+		(#{$imageIcon}-large 2.2)
+		(#{$imageIcon}-warn 1.8)
+	);
+
+	@each $size in $sizes {
+		$type:  nth($size, 1);
+	  	$vl: nth($size, 2);
+		.#{$type} {  
+	        font-size: $baseFontSize * decimal-round($vl*$device, 1);
+	    }
+	}
+}
+/*默认普通设备*/
+@include ic(1);
+
+/*变量定义：*/
+/*devices*/
+$iPlus : 1.06;
+$iPad : 1.25;
+
+/*在适配文件中：*/
+@include device(iPlus){
+	html{
+        font-size: $iPlus*$baseFontSize;
+    }
+	@include ic($iPlus);
+}
+@include device(iPad){
+	html{
+        font-size: $iPad*$baseFontSize;
+    }
+    @include ic($iPad);
+}
+{% endhighlight%}
+
+这样只需要`$sizes`中添加类名以及对应的系数，编译过后就得到了标准尺寸，以及两个适配设备对应的尺寸。
+
+标准
+
+![标准icon](/images/marvel/09.png)
+
+放大1.06倍
+
+![放大1.06倍icon](/images/marvel/10.png)
+
+放大1.25倍
+
+![放大1.25倍icon](/images/marvel/11.png)
+
+## 注意浏览器的更新
+每次移动系统更新，浏览器也会对应更新，每次更新可能会带来一些新的属性、API。就比如这次IOS9 Safari的更新，引入了-webkit-backdrop-filter这个属性。顺势便加入到了marvel中。
+
+IOS7下
+
+![弹层](/images/marvel/12.png) 
+
+IOS9下
+
+![弹层](/images/marvel/13.png) 
+
+## 总结
+marvel作为定位内部使用，满足微博移动页面需求的框架，基本上完成了预期目标。对比与第一代的brick，marvel实现了更加自动化、更容易维护、控件扩展都更高、更高的适配度的的愿景。在开发过程中，通过不断的踩坑，不断的思考，尽可能更好的解决问题，收获颇丰。
+
+在marvel的成长过程中，Google、W3CSchool、StackOverflow、Github、w3cplus还有一些开发者博客给了我很多启发或者帮助，在此一并感谢。
+
+时光荏苒，看着以前的一行行css代码经过短短几年变成了现在的变量、函数、混合，不禁感慨前端之路漫长崎岖。
