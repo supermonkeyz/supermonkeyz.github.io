@@ -16,23 +16,7 @@ categories: fe css
 ##文件目录结构
 开发目录是由font、js、scss、svg这几个目录构成的。
 
-{% highlight yaml %}
-font # 用于存放生成字体图标的svg源文件。
-js   # 用于存放屏幕适配js。
-scss # 用于存放scss文件,包含两个子文件夹。
-    lib  # 存放基础控件 
-    card # 存放weibo card模块
-svg  # 用于存放生成svg sprite的svg源文件。
-{% endhighlight %}
 
-编译生成后的文件目录
-
-{% highlight yaml %}
-font # 生成的字体图标文件 包括 woff2 woff svg eot ttf
-js   # 用于存放屏幕适配js
-css  # 用于存放生成的css文件
-img  # 用于存放生成的svg sprite
-{% endhighlight %}
 
 那么lib card又分别包含什么文件呢
 
