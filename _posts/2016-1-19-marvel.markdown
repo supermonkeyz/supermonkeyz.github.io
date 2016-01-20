@@ -53,7 +53,7 @@ img  # 用于存放生成的svg sprite
 
 **scss**
 
-{% highlight scss %}
+```  scss
 .m-dialog{
 	position:fixed;
 	background:#fff;
@@ -64,7 +64,7 @@ img  # 用于存放生成的svg sprite
 		font-size:14px;
 	}
 }
-{% endhighlight %}
+```
 
 **css**
 

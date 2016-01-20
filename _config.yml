@@ -17,5 +17,6 @@ twitter_username: jopsay
 github_username:  supermonkeyz
 
 # Build settings
-markdown: kramdown
-highlighter: pygments
+markdown: redcarpet
+redcarpet:
+    extensions: ["fenced_code_blocks", "autolink", "tables", "strikethrough"]
