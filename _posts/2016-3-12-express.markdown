@@ -1,0 +1,72 @@
+---
+layout: post
+title:  "Express创建一个项目"
+date:   2016-3-12 22:27:41 +0800
+categories: node
+---
+
+##Mark一下Node Express 创建一个项目
+
+###全局安装express
+
+{% highlight Bash shell scripts %}
+npm install -g express
+{% endhighlight %}
+
+###初始化工具
+
+express 4.x以后将express命令独立到 express-generator包中。所以要创建项目还要安装express-generator。
+
+{% highlight Bash shell scripts %}
+npm install -g express-generator
+{% endhighlight %}
+
+###创建一个app
+
+{% highlight Bash shell scripts %}
+express app
+{% endhighlight %}
+
+输出
+
+{% highlight Bash shell scripts %}
+   create : app
+   create : app/package.json
+   create : app/app.js
+   create : app/public
+   create : app/public/javascripts
+   create : app/public/images
+   create : app/public/stylesheets
+   create : app/public/stylesheets/style.css
+   create : app/routes
+   create : app/routes/index.js
+   create : app/routes/users.js
+   create : app/views
+   create : app/views/index.jade
+   create : app/views/layout.jade
+   create : app/views/error.jade
+   create : app/bin
+   create : app/bin/www
+
+   install dependencies:
+     $ cd app && npm install
+
+   run the app:
+     $ DEBUG=app:* npm start
+{% endhighlight %}
+
+然后安装其他依赖
+
+{% highlight Bash shell scripts %}
+cd app && npm install
+{% endhighlight %}
+
+###运行app
+
+{% highlight Bash shell scripts %}
+npm start
+{% endhighlight %}
+
+这样创建一个项目最简单的流程完成了。
+
+
