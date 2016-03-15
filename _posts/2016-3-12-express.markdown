@@ -5,15 +5,15 @@ date:   2016-3-12 22:27:41 +0800
 categories: node
 ---
 
-##Mark一下Node Express 创建一个项目
+## Mark一下Node Express 创建一个项目
 
-###全局安装express
+### 全局安装express
 
 {% highlight Bash shell scripts %}
 npm install -g express
 {% endhighlight %}
 
-###初始化工具
+### 初始化工具
 
 express 4.x以后将express命令独立到 express-generator包中。所以要创建项目还要安装express-generator。
 
@@ -21,7 +21,7 @@ express 4.x以后将express命令独立到 express-generator包中。所以要�
 npm install -g express-generator
 {% endhighlight %}
 
-###创建一个app
+### 创建一个app
 
 {% highlight Bash shell scripts %}
 express app
@@ -61,7 +61,7 @@ express app
 cd app && npm install
 {% endhighlight %}
 
-###运行app
+### 运行app
 
 {% highlight Bash shell scripts %}
 npm start
