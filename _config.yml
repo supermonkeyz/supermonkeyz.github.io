@@ -6,14 +6,16 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: uxfan
-email: popbaby@qq.com
-description: Jop's front-end blog
+title: 用户体验志
+email: jop@live.cn
+description: Jop's blog
 
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://uxfan.com" # the base hostname & protocol for your site
 twitter_username: jopsay
+weibo_username: jopz
+weibo_nickname: 青春的猴小野
 github_username:  supermonkeyz
 
 # Build settings
