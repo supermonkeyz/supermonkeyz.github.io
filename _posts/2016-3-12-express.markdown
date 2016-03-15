@@ -2,7 +2,7 @@
 layout: post
 title:  "Express创建一个项目"
 date:   2016-3-12 22:27:41 +0800
-categories: node
+categories: fe node
 ---
 
 ## Mark一下Node Express 创建一个项目
