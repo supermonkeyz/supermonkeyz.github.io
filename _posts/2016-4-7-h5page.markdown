@@ -1,0 +1,182 @@
+---
+layout: post
+title:  "H5专题开发实践"
+date:   2016-4-7 11:48:41 +0800
+categories: fe
+---
+_本文主要是针对不能直接用H5生成工具搭建的页面开发 [百度关键词](https://www.baidu.com/s?wd=h5%E9%A1%B5%E9%9D%A2%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7&rsv_spt=1&rsv_iqid=0xd17c260e00002f91&issp=1&f=3&rsv_bp=1&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=0&oq=H5&rsv_t=db85DsMccdYYSJxkxLXb%2BznV%2FCuyb8EM3KuTxIpYeEytWYlWi1mzSJNXnesg9fIocsm4&rsv_pq=a4e95304000070b2&rsv_sug3=11&rsv_sug1=10&rsv_sug7=100&rsv_sug2=1&prefixsug=H5&rsp=0&rsv_sug4=1394)（必须是百度一下,不是黑百度）_
+
+这两年随着移动设备的迅猛发展，围绕移动设备特征发展出很多页面类型。其中一种似PPT的展示形式的营销宣传类页面被“亲切”的称为“H5”。这类型的产品大多是集富媒体展示于一体的页面，所以在开发方式上也有别于传统页面的开发。最近接到一个简单H5报告类展示需求，正好聊聊这类页面的开发与优化。
+
+
+###线上地址
+
+[`智能手机微报告`](http://earnings.card.weibo.com/mobile2015/)
+
+![智能手机微报告](http://qr.api.cli.im/qr?data=http%253A%252F%252Fearnings.card.weibo.com%252Fmobile2015%252F&level=H&transparent=false&bgcolor=%23ffffff&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&size=280&kid=cliim&key=aab8cfb67328faeb07ad8193cd100965)
+
+总结一下这个类型的页面，面临的问题不外乎：图、音频、视频、动画、交互。处理好以上几点，这类页面开发就不是问题。这次报告需求比较简单，需要处理的也只是图和动画。
+
+### 开发环境的搭建
+
+一个完备的开发环境能够有效的提升编码效率，降低维护成本，这样我们可以专心编码。下面就是为这个项目简单搭建的开发环境
+
+- 借助`gulp`作为脚手架
+- `gulp-sass` 编译sass
+- `gulp-watch` 监控文件变化即时编译
+- `gulp-autoprefixer` 补齐私有前缀
+- `gulp-iconfont` 生成字体图标
+- `gulp-imagemin` 压缩图片
+- `minihtml`压缩html、js
+
+### 成熟的滚屏效果
+
+全屏滚动的类库真的是太多了,选择一个适合项目，或者自己写一个都可以。原理就是页面在滚动的时候切换到当前窗口展示。
+
+- [fullPage.js](https://github.com/alvarotrigo/fullPage.js/)
+
+- [Swipe.js](https://github.com/thebird/Swipe)
+
+- [slip.js](https://github.com/binnng/slip.js)
+
+### 现成的简单效果
+
+如果需要快速处理一个专题的话，那现成的动画效果直接拿来用是最好不过了。
+
+- [Animate.css](https://daneden.github.io/animate.css/)
+
+- [codepen](http://codepen.io/)
+
+- [cssdeck](http://cssdeck.com/)
+
+- [codrops](http://tympanus.net/codrops/)
+
+###屏幕的适配
+目前兼容性最好的还是rem + 根字号的动态配置
+
+{% highlight javascript %}
+
+var root = document.documentElement;
+var timer = null;
+var baseSize = 0;
+function setBaseSize() {
+    baseSize = (root.clientWidth / 320) * 16;
+    baseSize = baseSize > 24 ? 24 : baseSize;
+    root.style.fontSize = baseSize + 'px';
+}
+window.addEventListener('resize', function() {
+    timer&&clearTimeout(timer);
+    timer = setTimeout(setBaseSize, 300);
+}, false);   
+setBaseSize();
+
+{% endhighlight %}
+
+
+### HTML CSS 开发
+
+#### 拆分页面与样式
+
+一般这类展示都有N多个页面，所以建议把页面都拆分成单帧进行开发。这样在调试的过程中，调试第N页的时候，就不用滚动到对应帧看效果了，能节省不少时间。对应的CSS也进行拆分，因为这类页面的css因为动画还有布局原因体积比一般文件都要大，每一帧对应一个scss文件开发维护起来清爽很多。
+
+#### 巧妙使用SASS
+
+巧妙的使用sass提供的方法可以减少代码量，提升开发效率，减少维护成本。
+
+- scss的嵌套语法
+
+{% highlight scss %}
+.stage1 {
+	.a{}
+	.b{}
+	.c{}
+}
+{% endhighlight %}
+
+{% highlight scss %}
+.scence1{
+	.stage1 {
+		.a{}
+		.b{}
+		.c{}
+	}
+}	
+{% endhighlight %}
+
+- 使用sass运算
+
+{% highlight scss %}
+.a{
+	box-shadow: rgba(black,0.1)
+}
+{% endhighlight %}
+
+- 合理使用选择器和sass的循环
+
+{% highlight scss %}
+.a{
+	animation:fadeIn 0.5s ease both;
+	$animation-delay: 0.75s;
+	@for $i from 1 through 4{
+		&:nth-child(#{$i}){
+			animation-delay: $animation-delay;
+			$animation-delay: $animation-delay + .25;
+		}
+	}
+}
+{% endhighlight %}
+
+#### 想要页面酷就要有DOM
+
+如果想制作出比较复杂的动画，页面中的元素尽量要使用DOM或者SVG构建图形。单个图片实现不了复杂的动画效果
+
+### 静态资源的优化
+
+#### 图片格式的选择
+
+<style type="text/css">
+@font-face {
+    font-family: 'creport';
+    src: url('http://uxfan.qiniudn.com/images/h5page/font/creport.woff2') format('woff2'),
+         url('http://uxfan.qiniudn.com/images/h5page/font/creport.woff') format('woff'),
+         url('http://uxfan.qiniudn.com/images/h5page/font/creport.svg') format('svg'),
+         url('http://uxfan.qiniudn.com/images/h5page/font/creport.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.font-icon{
+	font-family: 'creport';
+    display:inline-block;
+    -webkit-font-smoothing:antialiased;
+}
+.font-icon-data {
+	font-weight: 300;font-size: 124px;line-height: 124px; color:#fff; text-shadow: 2px 4px 5px rgba(250,85,12,0.75);
+}
+.font-icon-data::before{content:"\E001";}
+</style>
+
+|![png8](http://uxfan.qiniudn.com/images/h5page/icon_png8.png)|![png24](http://uxfan.qiniudn.com/images/h5page/icon_png24.png)|![webp](http://uxfan.qiniudn.com/images/h5page/icon_webp.webp)|<span class="font-icon font-icon-data"></span>|
+|  :-----:  |  :-----:  |  :-----:  |  :-----:  |
+|  **png8**&ensp;5.6k  |  **png24**&ensp;8.7k  |  **webp**&ensp;7.2k  |  **woff**&ensp;2k  |
+
+<br>
+
+#### 图片继续压榨
+
+|![png8 256色](http://uxfan.qiniudn.com/images/h5page/img_png8_256.png)|![png8 64](http://uxfan.qiniudn.com/images/h5page/img_png8_64.png)|
+|  :-----:  |  :-----:  | 
+|  **png8 256色**&ensp;15.5k  |  **png8 64色**&ensp;12.2k  |
+
+通过对静态资源压榨式的优化，页面加载资源一共减少到只有400K，是去年版本2M多体积的20%（去年报告内容差不多），减少了用户等待加载的时间、流量消耗以及公司的带宽资源。
+
+### 高阶动画的晋级
+
+其实我觉得开发一个让人难忘的H5专题，简单的效果是远远不够的。去年腾讯的几个优质专题，都是从策划到开发一气呵成，在前期大量的设计储备的基础上，大量的使用了Canvas、SVG进行动画开发。所以如果开发出一个真的让人过目不忘的H5专题。那么...
+
+- [Canvas](http://www.w3school.com.cn/html5/html_5_canvas.asp)
+- [SVG](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial)
+- [three.js](http://threejs.org/)
+- [d3.js](https://d3js.org/)
+- [GSAP](http://greensock.com/gsap)
+- [snap.svg](http://snapsvg.io/)
+

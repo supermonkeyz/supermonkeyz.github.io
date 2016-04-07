@@ -21,7 +21,7 @@ permalink: /resume/
 
 - `CSS` `SASS` `LESS` `PostCSS` 
 
-- `JS` `Jquery` `ZEPTO` `ReactJS` `AngularJS` `AMD` `CMD`
+- `JS` `Jquery` `Zepto` `ReactJS` `AngularJS` `AMD` `CMD`
 
 - `Gulp` `Grunt` `Webpack`
 
