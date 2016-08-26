@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/**
+ * sass core
+ */
+/*多行截字*/
+/*基础类在common中*/
+/*处理border*/
+/*单独控制图标的大小*/
+/**
+ * var 
+ */
+/*Background color*/
+/*Font icon color*/
+/*card background*/
+/*Font Name*/
+/*Font Path*/
+/*Font Class Prefix*/
+/*Image Icon Prefix*/
+/*Image Icon Path*/
+/*Button Prefix*/
+/*Animation Prefix*/
+/*Border Color*/
+/*bar background color*/
+/*line box background color*/
+/*tap topbar bg*/
+/*Popup background*/
+/*Dialog background*/
+/*Pop s background*/
+/**/
+/*Pop s border*/
+/*Pop lt background*/
+/*Pop lt line color*/
+/*Avatar Line Color*/
+/*Bubble Color*/
+/*Rank Star Color*/
+/*Colors*/
+/*font*/
+/*Font Size*/
+/*card gap*/
+/*devices*/
+.card85 .card-wrap .card-main {
+  margin: 0;
+  padding: 0.625rem 0; }
+
+.card85 .box-left {
+  overflow: hidden; }
+
+.card85 .box-right {
+  margin-left: 0.5rem; }
+
+.card85 .m-avatar-box .m-img-box {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.4375rem; }
+
+.card85 .m-avatar-box .m-text-box h3 {
+  font-size: 0.875rem;
+  color: #636363; }
+
+.card85 .m-avatar-box .m-icon {
+  font-size: 10px; }
+  @media screen and (min-width: 414px) and (max-width: 767px) {
+    .card85 .m-avatar-box .m-icon {
+      font-size: 11px; } }
+  @media screen and (min-width: 768px) {
+    .card85 .m-avatar-box .m-icon {
+      font-size: 13px; } }
+
+.card85 .m-ctrl-box .m-line-gradient {
+  margin: 0 0.5625rem; }

@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/**
+ * sass core
+ */
+/*多行截字*/
+/*基础类在common中*/
+/*处理border*/
+/*单独控制图标的大小*/
+/**
+ * var 
+ */
+/*Background color*/
+/*Font icon color*/
+/*card background*/
+/*Font Name*/
+/*Font Path*/
+/*Font Class Prefix*/
+/*Image Icon Prefix*/
+/*Image Icon Path*/
+/*Button Prefix*/
+/*Animation Prefix*/
+/*Border Color*/
+/*bar background color*/
+/*line box background color*/
+/*tap topbar bg*/
+/*Popup background*/
+/*Dialog background*/
+/*Pop s background*/
+/**/
+/*Pop s border*/
+/*Pop lt background*/
+/*Pop lt line color*/
+/*Avatar Line Color*/
+/*Bubble Color*/
+/*Rank Star Color*/
+/*Colors*/
+/*font*/
+/*Font Size*/
+/*card gap*/
+/*devices*/
+.card38 .card-wrap .card-main .rank-box {
+  height: 4.125rem; }
+
+.card38 .rank-value {
+  display: inline-block;
+  width: 2.1875rem;
+  height: 1.0625rem;
+  text-align: center;
+  line-height: 1.0625rem;
+  border: 1px solid #FF8200;
+  font-size: 0.75rem;
+  color: #FF8200;
+  border-radius: 0.625rem;
+  margin: 0 0.5rem 0 0; }
+  .iosx2 .card38 .rank-value {
+    border: 0.5px solid #FF8200; }
+  .iosx3 .card38 .rank-value {
+    border: 0.35714px solid #FF8200; }
+
+.card38 .m-star-box {
+  font-size: 1.625rem; }
+  .card38 .m-star-box .m-font-star {
+    margin: 0 0.5rem; }

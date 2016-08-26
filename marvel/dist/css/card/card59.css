@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/**
+ * sass core
+ */
+/*多行截字*/
+/*基础类在common中*/
+/*处理border*/
+/*单独控制图标的大小*/
+/**
+ * var 
+ */
+/*Background color*/
+/*Font icon color*/
+/*card background*/
+/*Font Name*/
+/*Font Path*/
+/*Font Class Prefix*/
+/*Image Icon Prefix*/
+/*Image Icon Path*/
+/*Button Prefix*/
+/*Animation Prefix*/
+/*Border Color*/
+/*bar background color*/
+/*line box background color*/
+/*tap topbar bg*/
+/*Popup background*/
+/*Dialog background*/
+/*Pop s background*/
+/**/
+/*Pop s border*/
+/*Pop lt background*/
+/*Pop lt line color*/
+/*Avatar Line Color*/
+/*Bubble Color*/
+/*Rank Star Color*/
+/*Colors*/
+/*font*/
+/*Font Size*/
+/*card gap*/
+/*devices*/
+.card59 .m-auto-list {
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+  margin-bottom: -0.625rem;
+  padding: 0 0; }
+
+.card59 .m-auto-box {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  margin-bottom: 0.625rem; }
+
+.card59 .m-auto-box .m-panel {
+  border: 0; }
+
+.card59 .m-auto-box .m-mask-type {
+  position: absolute;
+  z-index: 9;
+  right: 0;
+  top: 0;
+  background: rgba(80, 125, 175, 0.8);
+  border-radius: 0 0 0 0.1875rem;
+  color: #fff;
+  font-size: 0.625rem;
+  padding: 0.25rem 0;
+  width: 1.875rem;
+  text-align: center; }
+
+.card59 .m-auto-box .m-btn-media {
+  position: absolute;
+  z-index: 9;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+.card59 .m-auto-box article > .m-img-box {
+  position: relative; }
+
+.card59 .m-auto-box article .m-avatar-box {
+  position: absolute;
+  z-index: 9;
+  bottom: 0.375rem;
+  left: 0.5625rem;
+  right: 0; }
+  .card59 .m-auto-box article .m-avatar-box .m-img-box {
+    width: 1.5rem;
+    height: 1.5rem; }
+  .card59 .m-auto-box article .m-avatar-box .m-text-box {
+    margin-left: 0.5625rem; }
+    .card59 .m-auto-box article .m-avatar-box .m-text-box h3 {
+      color: #fff;
+      font-size: 0.875rem; }
+  .card59 .m-auto-box article .m-avatar-box .m-icon {
+    font-size: 8px; }
+    @media screen and (min-width: 414px) and (max-width: 767px) {
+      .card59 .m-auto-box article .m-avatar-box .m-icon {
+        font-size: 9px; } }
+    @media screen and (min-width: 768px) {
+      .card59 .m-auto-box article .m-avatar-box .m-icon {
+        font-size: 10px; } }
+
+.card59 .m-auto-box article > .m-text-box {
+  padding: 0.5rem 0.5625rem; }
+  .card59 .m-auto-box article > .m-text-box h3 {
+    font-size: 0.9375rem;
+    line-height: 1.2;
+    height: 2.125rem; }
+  .card59 .m-auto-box article > .m-text-box h4 {
+    bottom: 0.5rem; }
+
+.card59 .m-auto-box .m-ctrl-box {
+  margin: 0 0.625rem; }
+  .card59 .m-auto-box .m-ctrl-box .m-font-dot-more {
+    font-size: 0.9375rem;
+    color: #939393; }
+  .card59 .m-auto-box .m-ctrl-box h4 {
+    font-size: 0.75rem; }

@@ -1,0 +1,163 @@
+@charset "UTF-8";
+/**
+ * sass core
+ */
+/*多行截字*/
+/*基础类在common中*/
+/*处理border*/
+/*单独控制图标的大小*/
+/**
+ * var 
+ */
+/*Background color*/
+/*Font icon color*/
+/*card background*/
+/*Font Name*/
+/*Font Path*/
+/*Font Class Prefix*/
+/*Image Icon Prefix*/
+/*Image Icon Path*/
+/*Button Prefix*/
+/*Animation Prefix*/
+/*Border Color*/
+/*bar background color*/
+/*line box background color*/
+/*tap topbar bg*/
+/*Popup background*/
+/*Dialog background*/
+/*Pop s background*/
+/**/
+/*Pop s border*/
+/*Pop lt background*/
+/*Pop lt line color*/
+/*Avatar Line Color*/
+/*Bubble Color*/
+/*Rank Star Color*/
+/*Colors*/
+/*font*/
+/*Font Size*/
+/*card gap*/
+/*devices*/
+.card41 {
+  overflow: hidden; }
+  .card41 .card-main {
+    margin-bottom: -1px; }
+  .card41 [class^=m-auth] {
+    display: inline-block;
+    padding: 0 0.25rem;
+    height: 1rem;
+    line-height: 1rem;
+    border-radius: 0.625rem;
+    border-width: 1px;
+    border-style: solid;
+    white-space: nowrap;
+    font-size: 0.5625rem;
+    vertical-align: middle; }
+  .card41 .m-auth-bluev {
+    background: #c6e7ff;
+    border-color: #5fb2f1;
+    color: #024cdd; }
+  .card41 .m-auth-yellowv {
+    background: #ffe5b8;
+    border-color: #f0ba64;
+    color: #ff4123; }
+  .card41 .m-auth-vip {
+    background: #fc683b;
+    border-color: #f44b25;
+    color: #fff; }
+  .card41 .m-icon {
+    vertical-align: middle; }
+  .card41 .data-row {
+    color: #333;
+    background-color: #fff;
+    margin-top: -1px; }
+    .card41 .data-row .m-box {
+      border-top-width: 1px;
+      border-right-width: 0;
+      border-bottom-width: 1px;
+      border-left-width: 0;
+      border-color: #e6e6e6;
+      border-style: solid; }
+      .android .card41 .data-row .m-box {
+        border-top-width: 1px;
+        border-right-width: 0;
+        border-bottom-width: 1px;
+        border-left-width: 0;
+        border-color: transparent;
+        border-style: solid;
+        -webkit-border-image: url("data:image/svg+xml;utf-8,%3C?xml%20version=%221.0%22%20encoding=%22utf-8%22?%3E%0A%3C!--%20Generator:%20Adobe%20Illustrator%2016.0.0,%20SVG%20Export%20Plug-In%20.%20SVG%20Version:%206.00%20Build%200)%20%20--%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0A%3Csvg%20version=%221.1%22%20%20xmlns=%22http://www.w3.org/2000/svg%22%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%20x=%220px%22%20y=%220px%22%0A%09%20width=%226px%22%20height=%226px%22%20viewBox=%220%200%206%206%22%20enable-background=%22new%200%200%206%206%22%20xml:space=%22preserve%22%3E%0A%3Crect%20x=%220.5%22%20y=%220.5%22%20fill=%22none%22%20stroke=%22#e6e6e6%22%20stroke-miterlimit=%2210%22%20width=%225%22%20height=%225%22/%3E%0A%3C/svg%3E") 2 repeat;
+             -o-border-image: url("data:image/svg+xml;utf-8,%3C?xml%20version=%221.0%22%20encoding=%22utf-8%22?%3E%0A%3C!--%20Generator:%20Adobe%20Illustrator%2016.0.0,%20SVG%20Export%20Plug-In%20.%20SVG%20Version:%206.00%20Build%200)%20%20--%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0A%3Csvg%20version=%221.1%22%20%20xmlns=%22http://www.w3.org/2000/svg%22%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%20x=%220px%22%20y=%220px%22%0A%09%20width=%226px%22%20height=%226px%22%20viewBox=%220%200%206%206%22%20enable-background=%22new%200%200%206%206%22%20xml:space=%22preserve%22%3E%0A%3Crect%20x=%220.5%22%20y=%220.5%22%20fill=%22none%22%20stroke=%22#e6e6e6%22%20stroke-miterlimit=%2210%22%20width=%225%22%20height=%225%22/%3E%0A%3C/svg%3E") 2 repeat;
+                border-image: url("data:image/svg+xml;utf-8,%3C?xml%20version=%221.0%22%20encoding=%22utf-8%22?%3E%0A%3C!--%20Generator:%20Adobe%20Illustrator%2016.0.0,%20SVG%20Export%20Plug-In%20.%20SVG%20Version:%206.00%20Build%200)%20%20--%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0A%3Csvg%20version=%221.1%22%20%20xmlns=%22http://www.w3.org/2000/svg%22%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%20x=%220px%22%20y=%220px%22%0A%09%20width=%226px%22%20height=%226px%22%20viewBox=%220%200%206%206%22%20enable-background=%22new%200%200%206%206%22%20xml:space=%22preserve%22%3E%0A%3Crect%20x=%220.5%22%20y=%220.5%22%20fill=%22none%22%20stroke=%22#e6e6e6%22%20stroke-miterlimit=%2210%22%20width=%225%22%20height=%225%22/%3E%0A%3C/svg%3E") 2 repeat; }
+      .iosx2 .card41 .data-row .m-box {
+        -webkit-border-image: none;
+             -o-border-image: none;
+                border-image: none;
+        border-top-width: 0.5px;
+        border-right-width: 0;
+        border-bottom-width: 0.5px;
+        border-left-width: 0; }
+      .iosx3 .card41 .data-row .m-box {
+        -webkit-border-image: none;
+             -o-border-image: none;
+                border-image: none;
+        border-top-width: 0.35714px;
+        border-right-width: 0;
+        border-bottom-width: 0.35714px;
+        border-left-width: 0; }
+  .card41 .m-box {
+    font-size: 0.9375rem;
+    line-height: 1.25;
+    padding: 0.9375rem 0;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem; }
+  .card41 .box-left {
+    width: 4rem;
+    color: #939393; }
+  .card41 .rel-box .m-auto-list {
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+    margin-bottom: 0;
+    padding: 0 0; }
+  .card41 .rel-box .m-auto-box {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    margin-bottom: 0; }
+  .card41 .rel-intro {
+    color: #636363;
+    margin-top: 0.3125rem; }
+  .card41 .works-box .m-auto-list {
+    margin-left: -0.1875rem;
+    margin-right: -0.1875rem;
+    margin-bottom: 0;
+    padding: 0 0; }
+  .card41 .works-box .m-auto-box {
+    padding-left: 0.1875rem;
+    padding-right: 0.1875rem;
+    margin-bottom: 0; }
+  .card41 .works-box .m-text-box {
+    text-align: center; }
+    .card41 .works-box .m-text-box h3 {
+      font-size: 0.8125rem;
+      margin: 0.625rem 0 0 0; }
+  .card41 .works-box.card-more .m-auto-box:nth-of-type(3) .m-img-box {
+    position: relative; }
+    .card41 .works-box.card-more .m-auto-box:nth-of-type(3) .m-img-box::before {
+      font-family: "marvelfont";
+      content: "\E000";
+      font-size: 2rem;
+      color: #c8c8c8;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      z-index: 99; }
+    .card41 .works-box.card-more .m-auto-box:nth-of-type(3) .m-img-box::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); }

@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/**
+ * sass core
+ */
+/*多行截字*/
+/*基础类在common中*/
+/*处理border*/
+/*单独控制图标的大小*/
+/**
+ * var 
+ */
+/*Background color*/
+/*Font icon color*/
+/*card background*/
+/*Font Name*/
+/*Font Path*/
+/*Font Class Prefix*/
+/*Image Icon Prefix*/
+/*Image Icon Path*/
+/*Button Prefix*/
+/*Animation Prefix*/
+/*Border Color*/
+/*bar background color*/
+/*line box background color*/
+/*tap topbar bg*/
+/*Popup background*/
+/*Dialog background*/
+/*Pop s background*/
+/**/
+/*Pop s border*/
+/*Pop lt background*/
+/*Pop lt line color*/
+/*Avatar Line Color*/
+/*Bubble Color*/
+/*Rank Star Color*/
+/*Colors*/
+/*font*/
+/*Font Size*/
+/*card gap*/
+/*devices*/
+.card6 a {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 2.375rem;
+  text-align: center; }
+  .card6 a .m-font {
+    vertical-align: top;
+    font-size: 0.75rem; }
+  .card6 a.color-gray {
+    color: #939393; }
+  .card6 a.color-orange {
+    color: #FF8200; }
+  .card6 a.color-red {
+    color: #e14123; }
+  .card6 a.color-blue {
+    color: #507DAF; }

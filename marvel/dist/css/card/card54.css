@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/**
+ * sass core
+ */
+/*多行截字*/
+/*基础类在common中*/
+/*处理border*/
+/*单独控制图标的大小*/
+/**
+ * var 
+ */
+/*Background color*/
+/*Font icon color*/
+/*card background*/
+/*Font Name*/
+/*Font Path*/
+/*Font Class Prefix*/
+/*Image Icon Prefix*/
+/*Image Icon Path*/
+/*Button Prefix*/
+/*Animation Prefix*/
+/*Border Color*/
+/*bar background color*/
+/*line box background color*/
+/*tap topbar bg*/
+/*Popup background*/
+/*Dialog background*/
+/*Pop s background*/
+/**/
+/*Pop s border*/
+/*Pop lt background*/
+/*Pop lt line color*/
+/*Avatar Line Color*/
+/*Bubble Color*/
+/*Rank Star Color*/
+/*Colors*/
+/*font*/
+/*Font Size*/
+/*card gap*/
+/*devices*/
+.card54 .card-wrap .card-main {
+  margin: 0;
+  padding: 0.9375rem 0 0.625rem; }
+
+.card54 .m-img-box {
+  width: 2.125rem;
+  height: 2.125rem;
+  margin: 0 0.75rem 0 0; }
+
+.card54 .m-text-box h3 {
+  font-size: 0.9375rem;
+  margin: 0 0 0.1875rem 0; }
+
+.card54 .m-text-box .m-star-box {
+  font-size: 0.75rem;
+  vertical-align: top; }
+
+.card54 header aside .m-icon {
+  vertical-align: middle; }
+
+.card54 header aside .like-num {
+  font-size: 0.75rem;
+  color: #939393;
+  margin: 0 0 0 0.1875rem; }
+
+.card54 article {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.0625rem;
+  color: #333;
+  line-height: 1.4; }
+
+.card54 footer {
+  margin: 0.25rem 0 0 0; }
+  .card54 footer a {
+    color: #507DAF;
+    font-size: 0.75rem; }

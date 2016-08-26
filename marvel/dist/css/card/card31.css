@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/**
+ * sass core
+ */
+/*多行截字*/
+/*基础类在common中*/
+/*处理border*/
+/*单独控制图标的大小*/
+/**
+ * var 
+ */
+/*Background color*/
+/*Font icon color*/
+/*card background*/
+/*Font Name*/
+/*Font Path*/
+/*Font Class Prefix*/
+/*Image Icon Prefix*/
+/*Image Icon Path*/
+/*Button Prefix*/
+/*Animation Prefix*/
+/*Border Color*/
+/*bar background color*/
+/*line box background color*/
+/*tap topbar bg*/
+/*Popup background*/
+/*Dialog background*/
+/*Pop s background*/
+/**/
+/*Pop s border*/
+/*Pop lt background*/
+/*Pop lt line color*/
+/*Avatar Line Color*/
+/*Bubble Color*/
+/*Rank Star Color*/
+/*Colors*/
+/*font*/
+/*Font Size*/
+/*card gap*/
+/*devices*/
+.card31 {
+  overflow: hidden;
+  background-color: #e3e4e6; }
+  .card31.on-search .card-wrap .card-main {
+    padding-right: 2.8125rem; }
+  .card31.on-search .search-cancel {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0); }
+  .card31 .card-wrap .card-main {
+    margin: 0 -0.25rem;
+    padding: 0.5rem 0;
+    -webkit-transition: padding 0.2s ease-out;
+            transition: padding 0.2s ease-out;
+    position: relative; }
+  .card31 .m-search {
+    background-color: #fff;
+    border: 1px solid #dcdcdc; }
+    .iosx2 .card31 .m-search {
+      border: 0.5px solid #dcdcdc; }
+    .iosx3 .card31 .m-search {
+      border: 0.35714px solid #dcdcdc; }
+  .card31 .search-cancel {
+    font-size: 1rem;
+    color: #636363;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-transform: translateX(130%);
+        -ms-transform: translateX(130%);
+            transform: translateX(130%);
+    -webkit-transition: -webkit-transform  0.2s ease-in;
+            transition: transform  0.2s ease-in; }
