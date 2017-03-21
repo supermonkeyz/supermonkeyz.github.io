@@ -35,7 +35,7 @@ permalink: /resume/
 
 ### 新浪微博 高级前端工程师 2011.5月至今
 
-主要负责带领团队完成[`微博会员`](http://new.vip.weibo.cn)、[`微博移动版`](http://m.weibo.cn)前端开发。
+主要负责带领团队完成[`微博会员`](http://new.vip.weibo.cn) 、[`微博移动版`](http://m.weibo.cn) 前端开发。
 
 在团队中作为技术带头人，负责构建流程、开发上线、开发工具、业务框架等基础服务的搭建。
 
@@ -54,7 +54,7 @@ permalink: /resume/
 
 - 规范交互、设计，减少开发成本，高扩展、高适配性。
 
-- 使用于[`微博HTML5版`](https://m.weibo.cn/beta)、[`话题`](https://m.weibo.cn/p/tabbar?containerid=100803&lfid=100808e1b1085ffb80f986a3229bddc32eb891&luicode=10000011&page_type=tabbar)、[`微博会员`](http://new.vip.weibo.cn)、微博移动端站外分享页 等。
+- 使用于[`微博HTML5版`](https://m.weibo.cn/beta) 、[`话题`](https://m.weibo.cn/p/tabbar?containerid=100803&lfid=100808e1b1085ffb80f986a3229bddc32eb891&luicode=10000011&page_type=tabbar) 、[`微博会员`](http://new.vip.weibo.cn) 、微博移动端站外分享页 等。
 
 #### **微博移动UI框架Woo**
 
@@ -88,9 +88,9 @@ permalink: /resume/
 
 - 在微博传统项目中致力于IE6+的兼容战役、并为高级浏览器提供更优体验。
 
-- 加入微博初期负责完成了 [`微博组件`](http://open.weibo.com/connect)的样式架构、制定开发规范、保证后期微博组件发展到40多个、历经多个开发者代码结构仍然保持清晰。
+- 加入微博初期负责完成了 [`微博组件`](http://open.weibo.com/connect) 的样式架构、制定开发规范、保证后期微博组件发展到40多个、历经多个开发者代码结构仍然保持清晰。
 
-- 参与 [`微博主站`](http://weibo.com)FEED重构、参与基于BigPipe渲染模式下第三方模块接入微博主站规范制定。
+- 参与 [`微博主站`](http://weibo.com) FEED重构、参与基于BigPipe渲染模式下第三方模块接入微博主站规范制定。
 
 - 主导微博重点项目微刊（已下线）页面架构，在项目紧急，缺少规划情况下，带领临时组建的小团队做到迅速响应，为整体开发争取更多时间。
 
