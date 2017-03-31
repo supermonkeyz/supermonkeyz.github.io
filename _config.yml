@@ -22,4 +22,4 @@ github_username:  supermonkeyz
 markdown: kramdown
 
 
-excerpt_separator: "<!--intro-->"
+excerpt_separator: <!--more-->

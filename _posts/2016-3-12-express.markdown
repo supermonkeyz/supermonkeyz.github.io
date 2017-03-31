@@ -7,7 +7,7 @@ categories: fe node
 
 ## Mark一下Node Express 创建一个项目
 
-<!--intro-->
+<!--more-->
 
 ### 全局安装express
 
