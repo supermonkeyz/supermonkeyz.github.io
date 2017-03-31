@@ -183,6 +183,8 @@
 
     > li {
         margin-bottom: $spacing-unit;
+        padding-bottom:  $spacing-unit;
+        border-bottom: 0.5px solid $grey-color-light;
     }
 }
 
@@ -194,6 +196,10 @@
 .post-link {
     display: block;
     font-size: 24px;
+}
+
+.post-intro {
+    color: $grey-color;
 }
 
  hr {
