@@ -18,6 +18,9 @@ weibo_username: jopz
 weibo_nickname: 青春的猴小野
 github_username:  supermonkeyz
 
+layout: default
+comments: true
+
 # Build settings
 markdown: kramdown
 
