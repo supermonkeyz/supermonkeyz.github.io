@@ -7,6 +7,8 @@ categories: fe node
 
 ## Mark一下Node Express 创建一个项目
 
+<!-- intro -->
+
 ### 全局安装express
 
 {% highlight Bash shell scripts %}
@@ -68,5 +70,3 @@ npm start
 {% endhighlight %}
 
 这样创建一个项目最简单的流程完成了。
-
-

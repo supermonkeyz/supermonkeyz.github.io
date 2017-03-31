@@ -5,8 +5,10 @@ date:   2016-1-19 16:59:41 +0800
 categories: fe css
 ---
 ![marvel.css](/images/marvel/01.png)
- 
+
 2015，随着前端技术的发展，微博第一代移动样式库Brick似乎在可维护性、扩展性、高效性等方面都难以满足业务发展需求。于是我们着手完成了第二代移动样式库的搭建，marvel.css应运而生。之所以取名为marvel，一方面单词中文释义奇迹，另一方面Marvel Comic（漫威漫画）里面的超级英雄们也为广大群众喜闻乐见。这两方面将我们的愿景做了个很好的诠释，就是我们要建造一个好用的、适合不同团队一起使用的样式框架。在开发过程中，遇到了一些问题，收获了一些心得，下面就来聊聊marvel.css的成长过程。
+
+<!-- intro -->
 
 ## 前端脚手架
 
@@ -22,7 +24,7 @@ categories: fe css
 font # 用于存放生成字体图标的svg源文件。
 js   # 用于存放屏幕适配js。
 scss # 用于存放scss文件,包含两个子文件夹。
-    lib  # 存放基础控件 
+    lib  # 存放基础控件
     card # 存放weibo card模块
 svg  # 用于存放生成svg sprite的svg源文件。
 {% endhighlight %}
@@ -106,7 +108,7 @@ scss嵌套组织形式很清晰的表现了代码的结构，尤其是在团队�
 <div class="box"></div>
 {% endhighlight%}
 {% highlight scss %}
-.box{ 
+.box{
 	color: $cl-c;
 	font-size: $f12;
 }
@@ -117,7 +119,7 @@ brick里面如果box模块在多个页面中使用，如果文字颜色需要变
 除了方便维护外，其实利用sass还可以做到方便代码的新增。比如像**按钮**这类控件，有很多属性是相同的，不同的属性很好抽象出来。利用混合、循环、运算等方法就能更方便的实现代码。
 
 ![button](/images/marvel/05.png)
- 
+
 **基础部分**
 
 {% highlight scss %}
@@ -153,7 +155,7 @@ $btn-types: (
   $btn-bd-w: nth($btn-type, 4);
   $btn-bd-c: nth($btn-type, 5);
   $color-at: nth($btn-type, 6);
-  $btn-bd-at: nth($btn-type, 7); 
+  $btn-bd-at: nth($btn-type, 7);
   .#{$button}-#{$type} {
     @include btn($color,$color-bg,$btn-bd-w,$btn-bd-c,$color-at,$btn-bd-at);
     &:disabled,
@@ -305,7 +307,7 @@ marvel为了兼容性还是保留了字体图标的使用。开发中，通过`g
 使用gulp-svg-sprite插件可以将单个SVG图标拼合成整张大图。这点其实跟传统的css sprite没有什么差别。考虑到SVG的矢量特质，开发时的单独图标都调整成了10*10px（方便计算），然后每个图标间隔10px，图片拼合之后就是类似下图。
 
 ![icon](/images/marvel/08.png)
- 
+
 通过简单运算，我们用公式很容易就能得到每个icon的`background-position`。
 
 {% highlight scss %}
@@ -389,11 +391,11 @@ $iPad : 1.25;
 
 IOS7下
 
-![弹层](/images/marvel/12.png) 
+![弹层](/images/marvel/12.png)
 
 IOS9下
 
-![弹层](/images/marvel/13.png) 
+![弹层](/images/marvel/13.png)
 
 ## 结语
 marvel作为定位内部使用，满足微博移动页面需求的框架，基本上完成了预期目标。对比与第一代的brick，marvel实现了更加自动化、更容易维护、控件扩展都更高、更高的适配度的的愿景。在开发过程中，通过不断的踩坑，不断的思考，尽可能更好的解决问题，收获颇丰。
