@@ -174,7 +174,25 @@
 }
 
 .page-heading {
-    font-size: 20px;
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+    span {
+      position: relative;
+      padding: 0 5px;
+      z-index: 1;
+      background: $background-color;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      border: 0.5px solid transparent;
+      border-bottom: 0.5px solid $grey-color-light;
+    }
 }
 
 .post-list {
