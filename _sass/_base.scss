@@ -25,6 +25,11 @@ body {
     font-kerning: normal;
 }
 
+@include media-query($on-palm) {
+    html {
+      font-size: 12px;
+    }
+}
 
 
 /**
