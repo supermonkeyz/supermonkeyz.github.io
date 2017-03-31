@@ -3,6 +3,7 @@ layout: post
 title:  "微博移动样式框架marvel.css开发心得"
 date:   2016-1-19 16:59:41 +0800
 categories: fe css
+comments: true
 ---
 ![marvel.css](/images/marvel/01.png)
 
@@ -24,8 +25,8 @@ categories: fe css
 font # 用于存放生成字体图标的svg源文件。
 js   # 用于存放屏幕适配js。
 scss # 用于存放scss文件,包含两个子文件夹。
-    lib  # 存放基础控件
-    card # 存放weibo card模块
+  lib  # 存放基础控件
+  card # 存放weibo card模块
 svg  # 用于存放生成svg sprite的svg源文件。
 {% endhighlight %}
 
@@ -60,14 +61,14 @@ img  # 用于存放生成的svg sprite
 
 {% highlight scss %}
 .m-dialog{
-	position:fixed;
-	background:#fff;
-	h2{
-		font-size:18px;
-	}
-	h3{
-		font-size:14px;
-	}
+  position:fixed;
+  background:#fff;
+  h2{
+    font-size:18px;
+  }
+  h3{
+    font-size:14px;
+  }
 }
 {% endhighlight %}
 
@@ -75,14 +76,14 @@ img  # 用于存放生成的svg sprite
 
 {% highlight css %}
 .m-dialog{
-	position:fixed;
-	background:#fff;
+  position:fixed;
+  background:#fff;
 }
 .m-dialog h2 {
-	font-size:18px;
+  font-size:18px;
 }
 .m-dialog h3{
-	font-size:14px;
+  font-size:14px;
 }
 {% endhighlight %}
 
@@ -109,8 +110,8 @@ scss嵌套组织形式很清晰的表现了代码的结构，尤其是在团队�
 {% endhighlight%}
 {% highlight scss %}
 .box{
-	color: $cl-c;
-	font-size: $f12;
+  color: $cl-c;
+  font-size: $f12;
 }
 {% endhighlight%}
 
@@ -124,20 +125,20 @@ brick里面如果box模块在多个页面中使用，如果文字颜色需要变
 
 {% highlight scss %}
 .#{$button}{
-    text-align: center;
-    line-height:P2R(40px);
-    height: P2R(40px);
-    font-size:$f14;
-    border-radius: P2R(3px);
-    outline: 0;
-    display: inline-block;
-    min-width: P2R(70px);
-    box-sizing:border-box;
-    padding: 0;
-    &.#{$button}-block{
-      width: 100%;
-      display: block;
-    }
+  text-align: center;
+  line-height:P2R(40px);
+  height: P2R(40px);
+  font-size:$f14;
+  border-radius: P2R(3px);
+  outline: 0;
+  display: inline-block;
+  min-width: P2R(70px);
+  box-sizing:border-box;
+  padding: 0;
+  &.#{$button}-block{
+    width: 100%;
+    display: block;
+  }
 }
 
 /*需要依次填写按钮名称 文字色 背景色 边框大小 边框颜色 激活色 激活边框*/
@@ -203,43 +204,43 @@ marvel对`iPhone plus`，`iPad`进行了处理，根字号分别放大`1.06`倍�
 
 {% highlight scss %}
 .m-checkbox {
-	display: inline-block;
-	font-size: P2R(16px);
-	position: relative;
-	span{
-    	box-sizing:border-box;
-    	display: inline-block;
-    	@include border(border,1px,solid,#ccc);
-    	background: #fff;
-		width: P2M(18px);
-		height: P2M(18px);
-		line-height: P2M(18px);
-		margin: 0;
-		text-align: center;
-		overflow: hidden;
-		vertical-align: middle;
+  display: inline-block;
+  font-size: P2R(16px);
+  position: relative;
+  span{
+    box-sizing:border-box;
+    display: inline-block;
+    @include border(border,1px,solid,#ccc);
+    background: #fff;
+    width: P2M(18px);
+    height: P2M(18px);
+    line-height: P2M(18px);
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+    vertical-align: middle;
     }
-    input[type="checkbox"]{
-    	opacity: 0;
-    	position: absolute;
-    	&:checked{
-    		+ span{
-    			.#{$front-icon-font}{
-    				display: inline-block;
-    			}
-    		}
-    	}
+  input[type="checkbox"]{
+    opacity: 0;
+    position: absolute;
+    &:checked{
+      + span{
+        .#{$front-icon-font}{
+          display: inline-block;
+        }
+      }
     }
-    .#{$front-icon-font}{
-    	font-size: P2M(14px);
-    	display: none;
-    	color: #29c944;
-    }
-    em {
-    	font-size: $f13;
-    	color: $cl-c;
-    	vertical-align: middle;
-    }
+  }
+  .#{$front-icon-font}{
+    font-size: P2M(14px);
+    display: none;
+    color: #29c944;
+  }
+  em {
+    font-size: $f13;
+    color: $cl-c;
+    vertical-align: middle;
+  }
 }
 {% endhighlight%}
 
@@ -262,14 +263,14 @@ marvel对`iPhone plus`，`iPad`进行了处理，根字号分别放大`1.06`倍�
 @mixin border($bdv,$w,$s,$c){
   #{$bdv}: $w $s $c;
   @at-root .iosx2 &{
-       #{$bdv}: $w/2 $s $c;
+    #{$bdv}: $w/2 $s $c;
   }
   @at-root .iosx3 &{
-       #{$bdv}: $w/2.8 $s $c;
+    #{$bdv}: $w/2.8 $s $c;
   }
 }
 .line{
-	@include border (border-bottom 1px solid #ccc)
+  @include border (border-bottom 1px solid #ccc)
 }
 {% endhighlight%}
 
@@ -277,13 +278,13 @@ marvel对`iPhone plus`，`iPad`进行了处理，根字号分别放大`1.06`倍�
 
 {% highlight css %}
 .line{
-	border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 .iosx2 .line{
-	border-bottom: 0.5px solid #ccc
+  border-bottom: 0.5px solid #ccc
 }
 .iosx3 .line{
-	border-bottom: 0.35714px solid #ccc;
+  border-bottom: 0.35714px solid #ccc;
 }
 {% endhighlight%}
 
@@ -311,44 +312,48 @@ marvel为了兼容性还是保留了字体图标的使用。开发中，通过`g
 通过简单运算，我们用公式很容易就能得到每个icon的`background-position`。
 
 {% highlight scss %}
-$spriteWidth:P2M(30px);
+
+/*SVG拼图 16px为基准单位,因为拼图四周有一个单位大小的间隔，所以这里是48px*/
+$spriteWidth:P2M(48px);
 $spriteHeight:auto;
+
 .#{$imageIcon} {
-    display: inline-block;
-    vertical-align: top;
-    @include svgGet('#{$imageIconPath}', 'svg', $spriteWidth,$spriteHeight);
-    width: P2M(10px);
-    height: P2M(10px);
+  display: inline-block;
+  vertical-align: top;
+  @include svgGet('#{$imageIconPath}', 'svg', $spriteWidth,$spriteHeight);
+  width: P2M(16px);
+  height: P2M(16px);
 }
-/*按照顺序追加类名*/
-$sprite: yellowv bluev club vgirl male female vip nvip;
+
+$sprite: yellowv bluev club vgirl male female vip nvip like liked warn vipl1 vipl2 vipl3 vipl4 vipl5 vipl6 goldv!default;
+
 @each $icon in $sprite {
-    .#{$imageIcon}-#{$icon} {  
-        background-position:P2M(-10px) P2M(-10px)-((index($sprite,$icon)-1)*P2M(30px));
-    }
+  .#{$imageIcon}-#{$icon} {
+    background-position:P2M(-16px) P2M(-16px)-((index($sprite,$icon)-1) * P2M(48px));
+  }
 }
 {% endhighlight%}
 
-在SVG图标引用中，再次使用了em这个相对单位，因为这样通过调整父级容器的font-size我们可以得到任意大小的图标。基准字号为16px 那1rem的icon就是`10*10px`,想得到一个`14*14px`的图标的话，那么font-size设置成`1.4rem`（`14px/10px*1rem`）就可以了。这样看起来真的是很完美。但是当适配plus pad时，root `font-size`乘以`1.06`、`1.25`这样的系数后，以`em`为单位的各个属性值转化为`px`后就出现了小数，造成图标错位。
+在SVG图标引用中，再次使用了em这个相对单位，因为这样通过调整父级容器的font-size我们可以得到任意大小的图标。基准字号为16px 那1rem的icon就是`16px`,想得到一个`14px`的图标的话，那么font-size设置成`0.875rem`（`14px/16px*1rem`）就可以了。这样看起来真的是很完美。但是当适配plus pad时，root `font-size`乘以`1.06`、`1.25`这样的系数后，以`em`为单位的各个属性值转化为`px`后就出现了小数，造成图标错位。
 
-解决这个问题只能放弃`rem`，使用`px`为字号单位，以一个14px的icon的适配为例，要解决这个问题，就要保证1.4*1.06取小数点后一位四舍五入后再乘以基准字号。更杯具的是图标并不是只有一种尺寸，也就是说系数不单是1.4还可能是1.8、2等等。这样如果要是进行适配的话每一种尺寸的图标对应plus pad都要有一份适配尺寸。一方面开发起来复杂，另一方面后期新增图标的时候，其他人增加图标时也可能出现漏项的情况，必须找到一种尽可能周全的代码组织方法。从适配的需求很容易能找到其中的逻辑关系，组织出合理的sass还是能解决问题的。
+解决这个问题只能放弃`rem`，使用`px`为字号单位，以一个14px的icon的适配为例，要解决这个问题，就要保证14*1.06取小数点后一位四舍五入后再乘以基准字号。更杯具的是图标并不是只有一种尺寸，也就是说系数不单是14还可能是18、2等等。这样如果要是进行适配的话每一种尺寸的图标对应plus pad都要有一份适配尺寸。一方面开发起来复杂，另一方面后期新增图标的时候，其他人增加图标时也可能出现漏项的情况，必须找到一种尽可能周全的代码组织方法。从适配的需求很容易能找到其中的逻辑关系，组织出合理的sass还是能解决问题的。
 
 {% highlight scss %}
 @mixin ic($device){
-	$sizes:(
-		(#{$imageIcon} 1.4)
-		(#{$imageIcon}-large 2.2)
-		(#{$imageIcon}-warn 1.8)
-	);
-
-	@each $size in $sizes {
-		$type:  nth($size, 1);
-	  	$vl: nth($size, 2);
-		.#{$type} {  
-	        font-size: $baseFontSize * decimal-round($vl*$device, 1);
-	    }
-	}
+  $sizes:(
+    (#{$imageIcon} 14px)
+    (#{$imageIcon}-large 22px)
+    (#{$imageIcon}-warn 18px)
+  );
+  @each $size in $sizes {
+    $type: nth($size, 1);
+    $vl: nth($size, 2);
+    .#{$type} {
+      font-size: ceil($vl*$device);
+    }
+  }
 }
+
 /*默认普通设备*/
 @include ic(1);
 
@@ -359,20 +364,20 @@ $iPad : 1.25;
 
 /*在适配文件中：*/
 @include device(iPlus){
-	html{
-        font-size: $iPlus*$baseFontSize;
-    }
-	@include ic($iPlus);
+  html{
+    font-size: $iPlus*$baseFontSize;
+  }
+  @include ic($iPlus);
 }
 @include device(iPad){
-	html{
-        font-size: $iPad*$baseFontSize;
-    }
-    @include ic($iPad);
+  html{
+    font-size: $iPad*$baseFontSize;
+  }
+  @include ic($iPad);
 }
 {% endhighlight%}
 
-这样只需要`$sizes`中添加类名以及对应的系数，编译过后就得到了标准尺寸，以及两个适配设备对应的尺寸。
+这样只需要`$sizes`中添加类名以及对应需要图标的像素值，编译过后就得到了标准尺寸，以及两个适配设备对应的尺寸。
 
 标准
 

@@ -3,6 +3,7 @@ layout: post
 title:  "Express创建一个项目"
 date:   2016-3-12 22:27:41 +0800
 categories: fe node
+comments: true
 ---
 
 ## Mark一下Node Express 创建一个项目
@@ -32,29 +33,29 @@ express app
 输出
 
 {% highlight Bash shell scripts %}
-   create : app
-   create : app/package.json
-   create : app/app.js
-   create : app/public
-   create : app/public/javascripts
-   create : app/public/images
-   create : app/public/stylesheets
-   create : app/public/stylesheets/style.css
-   create : app/routes
-   create : app/routes/index.js
-   create : app/routes/users.js
-   create : app/views
-   create : app/views/index.jade
-   create : app/views/layout.jade
-   create : app/views/error.jade
-   create : app/bin
-   create : app/bin/www
+ create : app
+ create : app/package.json
+ create : app/app.js
+ create : app/public
+ create : app/public/javascripts
+ create : app/public/images
+ create : app/public/stylesheets
+ create : app/public/stylesheets/style.css
+ create : app/routes
+ create : app/routes/index.js
+ create : app/routes/users.js
+ create : app/views
+ create : app/views/index.jade
+ create : app/views/layout.jade
+ create : app/views/error.jade
+ create : app/bin
+ create : app/bin/www
 
-   install dependencies:
-     $ cd app && npm install
+ install dependencies:
+  $ cd app && npm install
 
-   run the app:
-     $ DEBUG=app:* npm start
+run the app:
+  $ DEBUG = app:* npm start
 {% endhighlight %}
 
 然后安装其他依赖
