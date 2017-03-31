@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "微博移动样式框架Marvel.css开发心得"
+title:  "微博移动样式框架marvel.css开发心得"
 date:   2016-1-19 16:59:41 +0800
 categories: fe css
 ---
