@@ -42,7 +42,19 @@
   </div>
 
 </footer>
+<script src="/js/scrollspy.js"></script>
+<script>
+(function() {
+  var ss = document.getElementById("markdown-toc");
+  if (ss != null) {
+    var spy = new ScrollSpy('#markdown-toc', {
+    nav: '.art-toc > li > a',
+    className: 'is-inview'
+    });
+  }
+})();
 
+</script>
 <script>
 var _hmt = _hmt || [];
 (function() {
