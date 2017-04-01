@@ -322,15 +322,9 @@
 
 .post-intro {
     color: $grey-color;
-    font-size: 1.25rem;
+    font-size: 1rem;
     @include media-query($on-laptop) {
-        font-size: 1rem;
-    }
-    h2 {
-      font-size: 1.25rem;
-      @include media-query($on-laptop) {
-          font-size: 1rem;
-      }
+        font-size: 0.875rem;
     }
 }
 
