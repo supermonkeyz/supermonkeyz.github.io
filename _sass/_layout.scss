@@ -425,6 +425,8 @@
   a {
     padding: 0 5px;
     display: block;
+    background-color: transparent;
+    transition: all 0.5s ease;
     &.is-inview,
     &:hover {
       background-color: $grey-color;
