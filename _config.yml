@@ -36,12 +36,9 @@ lang: zh-CN
 
 social:
   name: Jop
+  type: BlogPosting
   links:
     - https://twitter.com/jopsay
     - https://www.facebook.com/jopsay
     - http://weibo.com/jopz
     - https://github.com/supermonkeyz
-
-  seo:
-    name: uxfan.com
-    type: BlogPosting
