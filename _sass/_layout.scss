@@ -6,9 +6,11 @@
     border-bottom: 0.5px solid $grey-color-light;
     background-color: $grey-color-light-min ;
     min-height: 80px;
+    animation: show 1s 0.2s ease both;
 
     // Positioning context for the mobile navigation icon
     position: relative;
+    z-index: 9;
     .wrapper {
         text-align:center;
         height: 80px;
@@ -203,6 +205,7 @@
 .site-footer {
     border-top: 0.5px solid $grey-color-light;
     padding: $spacing-unit 0;
+    animation: fade 1s 1s ease both;
 }
 
 .footer-heading {
@@ -272,6 +275,7 @@
  */
 .page-content {
     padding: $spacing-unit 0;
+    animation: show 1s 0.5s ease both;
 }
 
 .page-heading {
@@ -433,5 +437,25 @@
       color: $background-color;
       text-decoration: none;
     }
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,-100%,0);
+   }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+   }
+  100% {
+    opacity: 1;
   }
 }
