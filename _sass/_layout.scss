@@ -1,10 +1,14 @@
+body {
+  background-color: rgba($background-color, 0.95);
+}
+
 /**
  * Site header
  */
 .site-header {
     //border-top: 5px solid $grey-color-dark;
-    border-bottom: 0.5px solid $grey-color-light;
-    background-color: $grey-color-light-min ;
+    border-bottom: 0.5px solid rgba($grey-color-light, 0.9);
+    background-color: rgba($grey-color-light-min, 0.2);
     min-height: 80px;
     animation: show 1s 0.2s ease both;
 
@@ -274,6 +278,7 @@
  * Page content
  */
 .page-content {
+    background-color: rgba($background-color, 0.2);
     padding: $spacing-unit 0;
     animation: show 1s 0.5s ease both;
 }
@@ -286,17 +291,6 @@
       position: relative;
       padding: 0 5px;
       z-index: 1;
-      background: $background-color;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 50%;
-      height: 1px;
-      border: 0.5px solid transparent;
-      border-bottom: 0.5px solid $grey-color-light;
     }
 }
 
