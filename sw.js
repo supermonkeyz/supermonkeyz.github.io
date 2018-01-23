@@ -4,6 +4,12 @@
 const version = '{{site.time | date: '%Y%m%d%H%M%S'}}';
 const cacheName = `static::${version}`;
 
+const cacheFiles = [
+  '{{ "/css/main.css" | prepend: site.baseurl }}',
+  '{{ "/js/index.js" | prepend: site.baseurl }}',
+  '/offline/'
+];
+
 {% raw %}
 function updateStaticCache() {
     return caches.open(cacheName).then(cache => {
@@ -35,9 +41,14 @@ function clearOldCache() {
 }
 
 self.addEventListener('install', event => {
-    event.waitUntil(updateStaticCache().then(() => {
-        console.log(`Service Worker: cache updated to version: ${cacheName}`);
-    }));
+  event.waitUntil(
+      caches.open(cacheName).then(function(cache) {
+          return cache.addAll(cacheFiles);
+      })
+  );
+    // event.waitUntil(updateStaticCache().then(() => {
+    //     console.log(`Service Worker: cache updated to version: ${cacheName}`);
+    // }));
 });
 
 self.addEventListener('activate', event => {
