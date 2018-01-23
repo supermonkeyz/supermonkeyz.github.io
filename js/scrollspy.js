@@ -28,7 +28,9 @@ ScrollSpy.prototype.getContents = function () {
   for (var i = 0, max = this.nav.length; i < max; i++) {
     var href = this.nav[i].href;
 
-    targetList.push(this.doc.getElementById(href.split('#')[1]));
+    var domId = decodeURIComponent(href.split('#')[1]);
+
+    targetList.push(this.doc.getElementById(domId));
   }
 
   return targetList;
