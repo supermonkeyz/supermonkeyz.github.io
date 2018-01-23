@@ -11,7 +11,6 @@ function updateStaticCache() {
             {% endraw %}
             '{{ "/css/main.css" | prepend: site.baseurl }}',
             '{{ "/js/index.js" | prepend: site.baseurl }}',
-            '{{ "/js/scrollspy.js" | prepend: site.baseurl }}',
             '/offline/'
             {% raw %}
         ]);
