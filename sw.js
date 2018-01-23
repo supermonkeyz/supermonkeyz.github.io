@@ -1,8 +1,5 @@
----
----
-
 const version = '{{site.time | date: '%Y%m%d%H%M%S'}}';
-const cacheName = `cache-v${version}`;
+const cacheName = 'cache-v00';
 
 const cacheFiles = [
   '{{ "/css/main.css" | prepend: site.baseurl }}',
