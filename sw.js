@@ -1,4 +1,3 @@
-const version = '{{site.time | date: '%Y%m%d%H%M%S'}}';
 const cacheName = 'cache-v00';
 
 const cacheFiles = [
