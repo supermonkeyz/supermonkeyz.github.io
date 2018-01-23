@@ -1,8 +1,8 @@
 const cacheName = 'cache-v00';
 
 const cacheFiles = [
-  '{{ "/css/main.css" | prepend: site.baseurl }}',
-  '{{ "/js/index.js" | prepend: site.baseurl }}',
+  '/css/main.css',
+  '/js/index.js',
   '/offline/'
 ];
 
