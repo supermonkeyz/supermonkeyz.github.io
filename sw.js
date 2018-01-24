@@ -31,6 +31,20 @@ self.addEventListener('install', (event) => {
 
     var request = event.request;
 
+    // Always fetch non-GET requests from the network.
+    if (request.method !== 'GET') {
+        event.respondWith(fetch(request));
+        return;
+    }
+
+    // For HTML requests, try the network first else fall back to the offline page.
+    if (request.headers.get('Accept').indexOf('text/html') !== -1) {
+        event.respondWith(
+            fetch(request).catch(() => caches.match('/offline/'))
+        );
+        return;
+    }
+
     //Tell the browser to wait for newtwork request and respond with below
     event.respondWith(
       //If request is already in cache, return it

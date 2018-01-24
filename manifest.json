@@ -1,5 +1,8 @@
 {
-    "name": "",
+    "name": "前端体验志",
+    "short_name": "uxfan",
+    "lang": "zh-CN",
+    "start_url": "/",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
