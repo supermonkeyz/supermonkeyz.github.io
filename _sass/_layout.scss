@@ -129,8 +129,9 @@ body {
     text-align: right;
 
     .menu-icon {
-        display: block;
-        float: right;
+        position: relative;
+        z-index: 99;
+        display: inline-block;
         width: 36px;
         height: 26px;
         line-height: 0;
@@ -140,6 +141,7 @@ body {
         > svg {
             width: 18px;
             height: 15px;
+            pointer-events: none;
 
             path {
                 fill: $grey-color-dark;
@@ -148,13 +150,21 @@ body {
     }
 
     .trigger {
-        clear: both;
-        display: none;
-    }
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.3s ease-in-out;
+        transform-origin: 18px -18px;
+        max-height: 0;
+        max-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
 
-    &:hover .trigger {
-        display: block;
-        padding-bottom: 5px;
+        &.show {
+            opacity: 1;
+            transform: scale(1);
+            max-height: 200px;
+            max-width: 100px;
+        }
     }
 
     .nav-item {
@@ -444,11 +454,14 @@ body {
 @keyframes show {
   0% {
     opacity: 0;
-    transform: translate3d(0,-100%,0);
+    transform: translate3d(-100%, 0, 0);
+   }
+   50% {
+    transform: translate3d(10%, 0, 0);
    }
   100% {
     opacity: 1;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
