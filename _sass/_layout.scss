@@ -26,10 +26,15 @@ body {
     letter-spacing: -1px;
     margin-bottom: 0;
     display:inline-block;
+    overflow: hidden;
 
     &,
     &:visited {
         color: $grey-color-dark;
+    }
+
+    & h1 {
+        margin-top: -200%;
     }
 }
 
@@ -147,6 +152,11 @@ body {
                 fill: $grey-color-dark;
             }
         }
+    }
+
+    .menu-title {
+        position: absolute;
+        margin-top: -300%;
     }
 
     .trigger {
