@@ -2,6 +2,14 @@ body {
   background-color: rgba($background-color, 0.95);
 }
 
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    body {
+        -webkit-backdrop-filter: blur(50px);
+        backdrop-filter: blur(50px);
+        background-color: rgba($background-color, 0.5);
+    }
+}
+
 /**
  * Site header
  */
