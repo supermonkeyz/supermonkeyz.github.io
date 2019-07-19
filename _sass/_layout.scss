@@ -1,13 +1,5 @@
 body {
-  background-color: rgba($background-color, 0.95);
-}
-
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    body {
-        -webkit-backdrop-filter: blur(25px);
-        backdrop-filter: blur(25px);
-        background-color: rgba($background-color, 0.6);
-    }
+  background-color: rgba($background-color, 0.88);
 }
 
 /**
@@ -43,6 +35,7 @@ body {
 
     & h1 {
         margin-top: -200%;
+        position: absolute;
     }
 }
 

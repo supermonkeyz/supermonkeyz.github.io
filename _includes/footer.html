@@ -44,22 +44,6 @@
 </footer>
 <script src="/js/index.js"></script>
 <script>
-  var host = 'https://ww1.sinaimg.cn/large/';
-  var imgs = [
-    '621ff2c2ly1fjfg4kvvw4j21hc0u07h0',
-    '621ff2c2ly1fjfg4jzeibj21hc0u0wsj',
-    '621ff2c2ly1fjfg4kbb6rj21hc0u04ch'
-  ];
-  let backgrounds = [];
-  for (let i = 0; i < imgs.length; i++) {
-    backgrounds.push(host + imgs[i] + '.jpg');
-  };
-  var min = 0;
-  var max = imgs.length - 1;
-  var random = Math.floor(Math.random() * (max - min + 1)) + min;
-  document.documentElement.style.backgroundImage = 'url(' + backgrounds[random] + ')';
-</script>
-<script>
   function menuToggle() {
     document.getElementById('dropDownMenu').classList.toggle('show');
   }

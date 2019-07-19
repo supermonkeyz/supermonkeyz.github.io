@@ -36,6 +36,7 @@ body {
 @include media-query($on-palm) {
     html {
       font-size: $base-font-size*0.875;
+      background-attachment: initial;
     }
 }
 
