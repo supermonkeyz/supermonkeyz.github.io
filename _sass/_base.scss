@@ -218,3 +218,7 @@ pre {
         }
     }
 }
+
+.highlighter-rouge {
+    background-image: linear-gradient(to left, lighten($grey-color, 45%), lighten($grey-color, 42%));
+}

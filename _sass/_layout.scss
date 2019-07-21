@@ -301,6 +301,7 @@ body {
  * Page content
  */
 .page-content {
+    color: $text-color-sub;
     background-color: rgba($background-color, 0.2);
     padding: $spacing-unit 0;
     animation: show 1s 0.5s ease both;
@@ -365,7 +366,7 @@ body {
 .post-title {
     font-size: 2rem;
     letter-spacing: -1px;
-    line-height: 1;
+    line-height: 1.5;
 
     @include media-query($on-laptop) {
         font-size: 1.75rem;
@@ -397,6 +398,10 @@ body {
         @include media-query($on-laptop) {
             font-size: 1rem;
         }
+    }
+
+    a {
+      color: $link-color;
     }
 }
 
