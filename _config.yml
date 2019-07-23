@@ -28,7 +28,7 @@ kramdown:
 
 excerpt_separator: <!--more-->
 
-gems:
+plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
