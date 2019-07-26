@@ -14,24 +14,24 @@ comments: true
 
 使用官方[Vue-CLI](https://cli.vuejs.org/zh/guide/installation.html)服务可以减少不必要的环境配置时间
 
-{% highlight shell %}
+``` shell
 npm install -g @vue/cli
 # OR
 yarn global add @vue/cli
-{% endhighlight %}
+```
 
 确认好Vue-CLI已经安装成功
 
-{% highlight shell %}
+``` shell
 vue --version
 3.9.3
-{% endhighlight %}
+```
 
 初始化项目，我们把UI组件库取名为yo-ui
 
-{% highlight shell %}
+``` shell
 vue create yo-ui
-{% endhighlight %}
+```
 
 选择Manually select features，可以看到如下选项，开发组件库最基本的除了Babel与Linter以外，我们可以暂时不需要。
 
@@ -39,19 +39,19 @@ vue create yo-ui
 
 在Linter / Formatter那个选项，选择ESLint + Prettier保证项目的代码尽可能规范。
 
-{% highlight shell %}
+``` shell
 ? Pick a linter / formatter config:
   ESLint with error prevention only
   ESLint + Airbnb config
   ESLint + Standard config
 ❯ ESLint + Prettier
-{% endhighlight %}
+```
 
 保证配置文件在`dedicated config files`。如果你使用的是3.9.3这个版本，也许你会遇到报错
 
-{% highlight shell %}
+``` shell
 Error: Failed to load plugin prettier: Cannot find module 'eslint-plugin-prettier'
-{% endhighlight %}
+```
 
 这个问题的解决方案[#4310](https://github.com/vuejs/vue-cli/issues/4310){:target="_blank"}
 
@@ -59,21 +59,21 @@ Error: Failed to load plugin prettier: Cannot find module 'eslint-plugin-prettie
 
 最基础的开发环境就算搭建好了，这时候如果执行
 
-{% highlight shell %}
+``` shell
 npm run serve
 # OR
 yarn serve
-{% endhighlight %}
+```
 
 会出现很多警告，这是因为遵循代码规范不同造成的。
 
 我们可以在.prettierrc.js里面配置
 
-{% highlight javascript %}
+``` javascript
 module.exports = {
   singleQuote: true
 };
-{% endhighlight %}
+```
 
 CLI会帮你创建几个示例文件，这些在我们的项目中并不需要，我们可以先删掉HelloWorld.vue，修改App.vue与main.js，保证项目在运行时不再⚠️，这时候项目终于健康的运转起来了，当然工作还远远没有结束。
 
@@ -87,15 +87,15 @@ CLI会帮你创建几个示例文件，这些在我们的项目中并不需要�
 
 类名结构定义为：
 
-{% highlight css %}
+``` css
 .namespace-filename-localclass {}
 /* 比如一个按钮 对应的class可能就是这样*/
 .y-button-default {}
-{% endhighlight %}
+```
 
 在vue.config.js中做如下配置：
 
-{% highlight javascript %}
+``` javascript
 module.exports = {
   css: {
     loaderOptions: {
@@ -106,11 +106,11 @@ module.exports = {
     }
   }
 }
-{% endhighlight %}
+```
 
 现在可以在App.vue尝试一下：
 
-{% highlight html %}
+``` html
 <template>
   <div :class="$style.title">标题</div>
 </template>
@@ -120,11 +120,11 @@ module.exports = {
   color: black;
 }
 </style>
-{% endhighlight %}
+```
 
 编译执行后：
 
-{% highlight html %}
+``` html
 <div class="y-App-title">测试</div>
 
 <style>
@@ -132,7 +132,7 @@ module.exports = {
   color: black;
 }
 </style>
-{% endhighlight %}
+```
 
 这样基本满足了我们对于样式命名的要求，那么是不是可以将`.y-App-title`中大写转成小写呢？vue-loader的issue[#734](https://github.com/vuejs/vue-loader/issues/734){:target="_blank"}中Evan You回答了这个问题。所以目前css-loader的getLocalIdent还不能派上用场。
 
@@ -140,13 +140,13 @@ module.exports = {
 
 PostCSS插件是需要单独配置的，在日常开发中最频繁的需求就是CSS单位转换了，通过[postcss-pxtorem](https://www.npmjs.com/package/postcss-pxtorem){:target="_blank"}我们可以轻松解决这个问题。
 
-{% highlight shell %}
+``` shell
 yarn add postcss-pxtorem --dev
-{% endhighlight %}
+```
 
 配置postcssrc.js
 
-{% highlight javascript %}
+``` javascript
 module.exports = {
   plugins: {
     'postcss-pxtorem': {
@@ -166,11 +166,11 @@ module.exports = {
     ...
   }
 };
-{% endhighlight %}
+```
 
 在之前的.title上测试一下
 
-{% highlight css %}
+``` css
 <style lang="postcss" module>
 .title {
   color: black;
@@ -178,11 +178,11 @@ module.exports = {
   border-bottom: 1px;
 }
 </style>
-{% endhighlight %}
+```
 
 编译后
 
-{% highlight css %}
+``` css
 <style>
 .y-App-title {
   color: black;
@@ -190,15 +190,15 @@ module.exports = {
   border-bottom: 1px;
 }
 </style>
-{% endhighlight %}
+```
 
 常用的PostCSS插件还有[postcss-preset-env](https://preset-env.cssdb.org/){:target="_blank"}，(或许你听说过它的前身cssnext)。它提供了未来CSS语法的支持，并且跟Babel一样分成了若干stage。
 
-{% highlight shell %}
+``` shell
 yarn add postcss-preset-env --dev
-{% endhighlight %}
+```
 
-{% highlight javascript %}
+``` javascript
 module.exports = {
   plugins: {
     …
@@ -208,11 +208,11 @@ module.exports = {
     …
   }
 }
-{% endhighlight %}
+```
 
 在之前的.title上测试一下
 
-{% highlight css %}
+``` css
 <style lang="postcss" module>
 .title {
   color: black;
@@ -221,11 +221,11 @@ module.exports = {
   font-family: system-ui;
 }
 </style>
-{% endhighlight %}
+```
 
 编译后
 
-{% highlight css %}
+``` css
 <style>
 .y-App-title {
   color: black;
@@ -234,7 +234,7 @@ module.exports = {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 }
 </style>
-{% endhighlight %}
+```
 
 CSS就先配置这么多，随着开发的推进，我们可能还会增加其他的配置。
 
@@ -242,12 +242,12 @@ CSS就先配置这么多，随着开发的推进，我们可能还会增加其�
 
 在项目中为了方便调试，console与debugger再所难免，所以在开发环境要为它们放行。在.eslintrc.js中增加两条规则。
 
-{% highlight js %}
+``` javascript
 rules: {
   'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
 }
-{% endhighlight %}
+```
 
 ## 校验提交
 
@@ -255,7 +255,7 @@ rules: {
 
 package.json中加入
 
-{% highlight json %}
+``` json
 "gitHooks": {
   "pre-commit": "lint-staged"
 },
@@ -265,31 +265,31 @@ package.json中加入
     "git add"
   ]
 }
-{% endhighlight %}
+```
 
 ## 构建
 
 Vue-CLI 3提供了很方便[构建库](https://cli.vuejs.org/zh/guide/build-targets.html#%E5%BA%93){:target="_blank"}的方式:
 
-{% highlight shell %}
+``` shell
 # 全局服务
 vue-cli-service build --target lib --name myLib [entry]
 # 项目内
 npx vue-cli-service build --target lib --name myLib [entry]
-{% endhighlight %}
+```
 
 新建一个package的文件夹和一个index.js的入口文件
 
 在package.json的script加入一条指令:
 
-{% highlight json %}
+``` json
 "package": "vue-cli-service build --target lib --name yo-ui ./package/index.js"
-{% endhighlight %}
+```
 
 在终端中输入：
-{% highlight shell %}
+``` shell
 yarn package
-{% endhighlight %}
+```
 
 ![库打包](/images/ui-framework/02_02.jpg)
 
