@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "从0开始搭建一套前端UI组件库 — 环境搭建"
+title:  "从0开始搭建一套前端UI组件库 — 02 环境搭建"
 date:   2019-7-22 22:13:41 +0800
 categories: fe Vue.js
 comments: true
