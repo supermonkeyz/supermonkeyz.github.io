@@ -271,7 +271,7 @@ package.json中加入
 
 Vue-CLI 3提供了很方便[构建库](https://cli.vuejs.org/zh/guide/build-targets.html#%E5%BA%93){:target="_blank"}的方式:
 
-``` shell
+```
 # 全局服务
 vue-cli-service build --target lib --name myLib [entry]
 # 项目内
