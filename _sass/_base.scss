@@ -1,4 +1,28 @@
 /**
+ * css var
+ */
+:root {
+    --brand-color: #333;
+    --link-hover: #ff7000;
+    --background-color: #fff;
+    --site-header-background-color: #{darken(#fff, 5%)};
+    --text-main-color: #333;
+    --text-sub-color: #{lighten(#333, 10%)};
+    --border-color: #{darken(#fff, 25%)};
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --brand-color: #ff7000;
+        --link-hover: #{lighten(#ff7000, 20%)};
+        --background-color: #212121;
+        --site-header-background-color: #{lighten(#212121, 5%)};
+        --text-main-color: #dedede;
+        --text-sub-color: #{darken(#dedede, 10%)};
+        --border-color: #{lighten(#212121, 25%)};
+    }
+}
+/**
  * Reset some basic elements
  */
 body, h1, h2, h3, h4, h5, h6,
@@ -8,21 +32,20 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
-
-
 /**
  * Basic styling
  */
 
 html {
-  background-position: center top;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  transform: translateZ(0);
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    transform: translateZ(0);
 }
 
 body {
+    background-color: var(--background-color);
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
     -webkit-text-size-adjust: 100%;
@@ -35,8 +58,8 @@ body {
 
 @include media-query($on-palm) {
     html {
-      font-size: $base-font-size*0.875;
-      background-attachment: initial;
+        font-size: $base-font-size*0.875;
+        background-attachment: initial;
     }
 }
 
@@ -99,21 +122,15 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: $base-font-weight;
 }
 
-
-
 /**
  * Links
  */
 a {
-    color: $brand-color;
+    color: var(--brand-color);
     text-decoration: none;
 
-    &:visited {
-        color: $brand-color;
-    }
-
     &:hover {
-        color: $text-color;
+        color: var(--link-hover);
         text-decoration: underline;
     }
 }
@@ -144,7 +161,7 @@ blockquote {
 pre,
 code {
     font-size: 15px;
-    border: 1px solid $grey-color-light;
+    border: 1px solid var(--border-color);
     border-radius: 3px;
     font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
@@ -214,11 +231,7 @@ pre {
         vertical-align: middle;
 
         path {
-            fill: $grey-color;
+            fill: currentColor;
         }
     }
-}
-
-.highlighter-rouge {
-    background-image: linear-gradient(to left, lighten($grey-color, 45%), lighten($grey-color, 42%));
 }

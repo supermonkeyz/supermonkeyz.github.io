@@ -25,6 +25,10 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-light-min: #F8F8F8;
 $grey-color-dark:  #333;
 
+// night color
+
+$background-color-dark: #212121;
+
 // Width of the content area
 $content-width:    800px;
 
@@ -45,8 +49,6 @@ $on-laptop:        800px;
         @content;
     }
 }
-
-
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
