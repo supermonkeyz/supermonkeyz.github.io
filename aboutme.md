@@ -6,7 +6,7 @@ permalink: /aboutme/
 <style>
 @font-face {
     font-family: 'icomoon';
-    src: url(data:application/font-woff;charset=utf-8;base64,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) format('woff');
+    src: url(data:application/font-woff;charset=utf-8;base64,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) format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,7 +24,12 @@ permalink: /aboutme/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-wechat:before {
+  content: "\e900";
+}
+.icon-weixin:before {
+  content: "\e900";
+}
 .icon-earth:before {
   content: "\e9ca";
 }
@@ -33,9 +38,6 @@ permalink: /aboutme/
 }
 .icon-twitter:before {
   content: "\ea96";
-}
-.icon-sina-weibo:before {
-  content: "\ea9a";
 }
 .icon-github:before {
   content: "\eab0";
@@ -55,6 +57,7 @@ sup::before {
 .contact li{
   list-style: none;
   margin-bottom: 5px;
+  color: #666;
 }
 
 .contact li a {
@@ -69,14 +72,14 @@ sup::before {
 
 ## 张博 <sup>name</sup>
 
-![qrcode](/images/aboutme/qr-code.svg){:height="162px" width="162px" style="float: left"}
+![qrcode](/images/aboutme/qr-code.svg){:height="162px" width="162px" style="float: left; margin-left: -10px"}
 
-<ul class="contact" style="padding-left: 162px">
+<ul class="contact" style="padding-left: 150px">
   <li><span class="icon-earth"></span> <a href="https://uxfan.com">uxfan.com</a></li>
   <li><span class="icon-mail"></span> <a href="mailto:jop@live.cn">jop@live.cn</a></li>
+  <li><span class="icon-wechat"></span> jopsay</li>
   <li><span class="icon-github"></span> <a target="_blank" href="https://github.com/supermonkeyz">supermonkeyz</a></li>
   <li><span class="icon-twitter"></span> <a target="_blank" href="https://twitter.com/jopsay">jopsay</a></li>
-  <li><span class="icon-sina-weibo"></span> <a target="_blank" href="https://weibo.com/jopz">青春的猴小野</a></li>
 </ul>
 
 <div style="clear: both"></div>
@@ -85,11 +88,33 @@ sup::before {
 
 ## 关于 <sup>about</sup>
 
-新浪微博资深前端工程师，目前主要支持移动团队前端开发。关注设计细节、交互效果，开发效率、前端性能、执行效率。推动前端自动化、组件规范化、工程持续集成。
+现就职于新浪微博，目前主要支持移动团队前端开发。主要负责前端工程化、组件库搭建、开发规范制定、业务技术方案规划等工作。
+
+关注设计细节、交互效果，开发效率、前端性能、执行效率。推动自动化工具、组件标准规范化、工程持续集成。
+
+热爱开源社区、热爱**<span style="color:#4285F4">G</span><span style="color:#DB4437">o</span><span style="color:#F4B400">o</span><span style="color:#4285F4">g</span><span style="color:#0F9D58">l</span><span style="color:#DB4437">e</span>**、热爱Medium、热爱stack **overflow**、热爱尝试。
+
+先后开发完成了
+  - [Marvel](https://m.weibo.cn){:target="_blank"} Now used by m.weibo.cn
+  - [WooUI](https://uxfan.com/wooui){:target="_blank"}
+  - [WooUI-Weibo](https://uxfan.com/wooui/weibo){:target="_blank"}
+  - [WooUI-Cards]()
+
+等基础依赖。
+
+在做好基础服务工作之余，带领过微博开放平台业务线、微博会员增值业务线、微博用户增长业务线的业务开发支持。
 
 ***
 
 ## 技能 <sup>skills</sup>
+
+- HTML CSS Javascript
+- Node Gulp Webpack Rollup
+- Sketch PS
+- SVG Canvas
+- Postcss Sass Less
+- Vue React
+- Git SVN Docker CI
 
 ***
 
