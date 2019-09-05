@@ -68,6 +68,15 @@ sup::before {
   font-size: 120%;
   vertical-align: middle;
 }
+
+.post-content ul {
+  margin-bottom: 20px;
+}
+
+hr {
+  border-width: 1px;
+  margin-bottom: 20px;
+}
 </style>
 
 ## 张博 <sup>name</sup>
@@ -88,9 +97,9 @@ sup::before {
 
 ## 关于 <sup>about</sup>
 
-现就职于新浪微博，目前主要支持移动团队前端开发。主要负责前端工程化、组件库搭建、开发规范制定、业务技术方案规划等工作。
+现就职于新浪微博，目前支持移动团队前端开发。主要负责前端工程化、组件库搭建、开发规范制定、业务技术方案规划、前端与客户端交互调优等工作。
 
-关注设计细节、交互效果，开发效率、前端性能、执行效率。推动自动化工具、组件标准规范化、工程持续集成。
+关注设计细节、交互效果，开发效率、前端性能、执行效率、代码可维护性。推动自动化工具、组件标准规范化、工程持续集成。
 
 热爱开源社区、热爱**<span style="color:#4285F4">G</span><span style="color:#DB4437">o</span><span style="color:#F4B400">o</span><span style="color:#4285F4">g</span><span style="color:#0F9D58">l</span><span style="color:#DB4437">e</span>**、热爱Medium、热爱stack **overflow**、热爱尝试。
 
@@ -102,7 +111,7 @@ sup::before {
 
 等基础依赖。
 
-在做好基础服务工作之余，带领过微博开放平台业务线、微博会员增值业务线、微博用户增长业务线的业务开发支持。
+在做好基础服务工作之余，先后带领微博开放平台业务线、微博会员增值业务线、微博用户增长业务线的前端团队进行开发支持。
 
 ***
 
@@ -112,7 +121,7 @@ sup::before {
 - Node Gulp Webpack Rollup
 - Sketch PS
 - SVG Canvas
-- Postcss Sass Less
+- PostCSS Sass Less
 - Vue React
 - Git SVN Docker CI
 
@@ -120,6 +129,92 @@ sup::before {
 
 ## 项目 <sup>projects</sup>
 
+- <span style="font-size: 120%">基于rpc统一数据结构的Weibo组件</span>
+
+  <span class="icon-earth" style="vertical-align: 0; margin-right: 5px"></span>[**在线预览**](https://uxfan.com/wooui/weibo)
+
+  技术依赖:
+
+    - Vue
+    - @woo/vue-cli-plugin-wooui *private*
+    - @woo/wooui *private*
+    - Storybook
+
+  开发内容:
+
+    - 统一脚本创建管理小颗粒组件
+    - css-modules管理样式命名
+    - PostCSS预编译提升开发效率
+    - CSS custom properties管理全局属性
+    - 抽离JS until、Vue mixins、filter...
+    - 使用StoryBook展示组件、代码示例
+
+  解决问题:
+
+    - 通过规范后的rpc数据，简单快速解析出一个复杂多变的微博Feed。
+    - 多端适配，图片、视频、卡片等资源展现为客户端内形态。
+    - 完整支持纯文本化微博解析为富媒体形态、保证性能。
+    - 扩展性高、业务线可通过定制数据迅速生成专属Feed流。
+
+- <span style="font-size: 120%">基于Weibo统一视觉规范的组件库WooUI</span>
+
+  <span class="icon-earth" style="vertical-align: 0; margin-right: 5px"></span>[**在线预览**](https://uxfan.com/wooui)
+
+  技术依赖:
+
+    - Webpack
+    - Gulp
+    - PostCSS
+    - Vue
+
+  开发内容:
+
+    - 脚本化创建开发、制定开发文档
+    - 组件API规划
+    - 效率、扩展性、可维护性评估
+    - 组件迭代规划
+
+
+  解决问题：
+
+    - 根据微博设计语言，统一组件，增强规范性
+    - 保障了基于微博设计语言开发的业务迅速响应
+    - 高可维护性、高扩展性、成为其他业务组件的基础
+
+  ------------------
+
+- <span style="font-size: 120%">微博小程序解决方案</span>
+
+  技术依赖:
+
+    - Webpack
+    - Rollup
+    - ...
+
+  开发内容:
+
+    - 参与runtime脚本编译开发
+    - Build-in组件规划构建
+    - runtime bundle提交脚本
+
+  解决问题：
+
+    - 小程序内部解决方案
+    - 赋予前端更多原生能力
+    - 提速端内应用体验
+
 ***
 
 ## 经历 <sup>experience</sup>
+
+  - 2011-至今 新浪微博
+
+  - 2009-2011 China-pub.com
+
+  - 2007-2009 Kotin@Tianjin 创业
+
+***
+
+## 教育 <sup>education</sup>
+
+  - 2003-2007 哈尔滨工业大学 大学本科
