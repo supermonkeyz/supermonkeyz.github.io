@@ -66,7 +66,7 @@ sup::before {
 }
 
 .contact [class^="icon-"] {
-  font-size: 120%;
+  font-size: 125%;
   vertical-align: middle;
 }
 
@@ -134,7 +134,7 @@ blockquote {
 
 ## 项目 <sup>projects</sup>
 
-- <span style="font-size: 120%">基于rpc统一数据结构的Weibo组件</span>
+- <span style="font-size: 125%">基于rpc统一数据结构的Weibo组件</span>
 
   <span class="icon-earth" style="vertical-align: 0; margin-right: 5px"></span>[**在线预览**](https://uxfan.com/wooui/weibo)
 
@@ -161,7 +161,7 @@ blockquote {
     - 完整支持纯文本化微博解析为富媒体形态、保证性能。
     - 扩展性高、业务线可通过定制数据迅速生成专属Feed流，广告、商业、超话等业务团队已接入。
 
-- <span style="font-size: 120%">基于Weibo统一视觉规范的组件库WooUI</span>
+- <span style="font-size: 125%">基于Weibo统一视觉规范的组件库WooUI</span>
 
   <span class="icon-earth" style="vertical-align: 0; margin-right: 5px"></span>[**在线预览**](https://uxfan.com/wooui)
 
@@ -186,9 +186,7 @@ blockquote {
     - 保障了基于微博设计语言开发的业务迅速响应
     - 高可维护性、高扩展性、成为其他业务组件的基础
 
-  ------------------
-
-- <span style="font-size: 120%">微博小程序解决方案</span>
+- <span style="font-size: 125%">微博小程序解决方案</span>
 
   技术依赖:
 
@@ -208,9 +206,7 @@ blockquote {
     - 赋予前端更多原生能力
     - 提速端内应用体验
 
-------------------
-
-- <span style="font-size: 120%">微博任务中心</span>
+- <span style="font-size: 125%">微博任务中心</span>
 
   项目背景:
 
@@ -230,9 +226,7 @@ blockquote {
     - 提高前端代码的复用程度、推动表现层与逻辑层解耦
     - 推动客户端对于jsbridge的改造与优化
 
-------------------
-
-- <span style="font-size: 120%">微博会员增值项目</span>
+- <span style="font-size: 125%">微博会员增值项目</span>
 
   项目背景:
 
