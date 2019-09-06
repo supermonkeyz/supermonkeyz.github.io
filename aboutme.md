@@ -141,7 +141,7 @@ blockquote {
 
 - <span style="font-size: 125%">基于rpc统一数据结构的Weibo组件</span>
 
-  <span class="icon-earth" style="vertical-align: 0; margin-right: 5px"></span>[**在线预览**](https://uxfan.com/wooui/weibo)
+  <span class="icon-earth" style="vertical-align: 0; margin-right: 5px"></span>[**在线预览**](https://uxfan.com/wooui/weibo){:target="_blank"}
 
   技术依赖:
 
@@ -168,7 +168,7 @@ blockquote {
 
 - <span style="font-size: 125%">基于Weibo统一视觉规范的组件库WooUI</span>
 
-  <span class="icon-earth" style="vertical-align: 0; margin-right: 5px"></span>[**在线预览**](https://uxfan.com/wooui)
+  <span class="icon-earth" style="vertical-align: 0; margin-right: 5px"></span>[**在线预览**](https://uxfan.com/wooui){:target="_blank"}
 
   技术依赖:
 
@@ -281,4 +281,4 @@ blockquote {
 
 ## 教育 <sup>education</sup>
 
-  - 2003-2007 哈尔滨工业大学 大学本科
+  - 2003-2007 哈尔滨工业大学 大学本科 媒体技术与艺术
