@@ -6,10 +6,10 @@ permalink: /aboutme/
 <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
 <style>
 @font-face {
-    font-family: 'icomoon';
-    src: url(data:application/font-woff;charset=utf-8;base64,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) format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'icomoon';
+  src: url(data:application/font-woff;charset=utf-8;base64,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) format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -108,13 +108,18 @@ blockquote {
 
 热爱开源社区、热爱**<span style="color:#4285F4">G</span><span style="color:#DB4437">o</span><span style="color:#F4B400">o</span><span style="color:#4285F4">g</span><span style="color:#0F9D58">l</span><span style="color:#DB4437">e</span>**、热爱Medium、热爱stack **overflow**、热爱尝试。
 
-先后开发完成了
-  - [Marvel](https://m.weibo.cn){:target="_blank"} Now used by m.weibo.cn
-  - [WooUI](https://uxfan.com/wooui){:target="_blank"}
-  - [WooUI-Weibo](https://uxfan.com/wooui/weibo){:target="_blank"}
-  - [WooUI-Cards]()
+近期先后开发完成了
+- [Marvel](https://m.weibo.cn){:target="_blank"} Now used by m.weibo.cn
+- [WooUI](https://uxfan.com/wooui){:target="_blank"}
+- [WooUI-Weibo](https://uxfan.com/wooui/weibo){:target="_blank"}
+- [WooUI-Cards]()
 
 等基础依赖。
+
+以及参与了
+- wbox小程序框架
+- weibo-virtual-scroller
+- weibo-photoswipe
 
 先后带领微博开放平台业务线、微博会员增值业务线、微博用户增长业务线的前端团队支持业务开发。负责对接产品需求、制定开发方案、组织协调上下游关系。探索调研业界更优解决方案，定期组织技术分享，与其他团队技术交流。
 
@@ -140,26 +145,26 @@ blockquote {
 
   技术依赖:
 
-    - Vue
-    - @woo/vue-cli-plugin-wooui *private*
-    - @woo/wooui *private*
-    - Storybook
+  - Vue
+  - @woo/vue-cli-plugin-wooui *private*
+  - @woo/wooui *private*
+  - Storybook
 
   开发内容:
 
-    - 统一脚本创建管理小颗粒组件
-    - css-modules管理样式命名
-    - PostCSS预编译提升开发效率
-    - CSS custom properties管理全局属性
-    - 抽离JS until、Vue mixins、filter...
-    - 使用StoryBook展示组件、代码示例
+  - 统一脚本创建管理小颗粒组件
+  - css-modules管理样式命名
+  - PostCSS预编译提升开发效率
+  - CSS custom properties管理全局属性
+  - 抽离JS until、Vue mixins、filter...
+  - 使用StoryBook展示组件、代码示例
 
   解决问题:
 
-    - 通过规范后的rpc数据，简单快速解析出一个复杂多变的微博Feed。
-    - 多端适配，图片、视频、卡片等资源展现为客户端内形态。
-    - 完整支持纯文本化微博解析为富媒体形态、保证性能。
-    - 扩展性高、业务线可通过定制数据迅速生成专属Feed流，广告、商业、超话等业务团队已接入。
+  - 通过规范后的rpc数据，简单快速解析出一个复杂多变的微博Feed。
+  - 多端适配，图片、视频、卡片等资源展现为客户端内形态。
+  - 完整支持纯文本化微博解析为富媒体形态、保证性能。
+  - 扩展性高、业务线可通过定制数据迅速生成专属Feed流，广告、商业、超话等业务团队已接入。
 
 - <span style="font-size: 125%">基于Weibo统一视觉规范的组件库WooUI</span>
 
@@ -167,44 +172,44 @@ blockquote {
 
   技术依赖:
 
-    - Webpack
-    - Gulp
-    - PostCSS
-    - Vue
+  - Webpack
+  - Gulp
+  - PostCSS
+  - Vue
 
   开发内容:
 
-    - 脚本化创建开发、制定开发文档
-    - 组件API规划
-    - 效率、扩展性、可维护性评估
-    - 组件迭代规划
+  - 脚本化创建开发、制定开发文档
+  - 组件API规划
+  - 效率、扩展性、可维护性评估
+  - 组件迭代规划
 
 
   解决问题：
 
-    - 根据微博设计语言，统一组件，增强规范性
-    - 保障了基于微博设计语言开发的业务迅速响应
-    - 高可维护性、高扩展性、成为其他业务组件的基础
+  - 根据微博设计语言，统一组件，增强规范性
+  - 保障了基于微博设计语言开发的业务迅速响应
+  - 高可维护性、高扩展性、成为其他业务组件的基础
 
 - <span style="font-size: 125%">微博小程序解决方案</span>
 
   技术依赖:
 
-    - Webpack
-    - Rollup
-    - ...
+  - Webpack
+  - Rollup
+  - ...
 
   开发内容:
 
-    - 参与runtime脚本编译开发
-    - Build-in组件规划构建
-    - runtime bundle提交脚本
+  - 参与runtime脚本编译开发
+  - Build-in组件规划构建
+  - runtime bundle提交脚本
 
   解决问题：
 
-    - 小程序内部解决方案
-    - 赋予前端更多原生能力
-    - 提速端内应用体验
+  - 小程序内部解决方案
+  - 赋予前端更多原生能力
+  - 提速端内应用体验
 
 - <span style="font-size: 125%">微博任务中心</span>
 
@@ -214,17 +219,17 @@ blockquote {
 
   开发内容:
 
-    - 业务拆分、模块划分、人员调配
-    - jsbridge调用封装
-    - 打码跳转逻辑封装
-    - 基于wooui的开发实践
+  - 业务拆分、模块划分、人员调配
+  - jsbridge调用封装
+  - 打码跳转逻辑封装
+  - 基于wooui的开发实践
 
   解决问题：
 
-    - 一套代码解决业务在微博主端、极速版内并存逻辑
-    - 与后端合作、推动后端合理制定接口
-    - 提高前端代码的复用程度、推动表现层与逻辑层解耦
-    - 推动客户端对于jsbridge的改造与优化
+  - 一套代码解决业务在微博主端、极速版内并存逻辑
+  - 与后端合作、推动后端合理制定接口
+  - 提高前端代码的复用程度、推动表现层与逻辑层解耦
+  - 推动客户端对于jsbridge的改造与优化
 
 - <span style="font-size: 125%">微博会员增值项目</span>
 
@@ -234,16 +239,33 @@ blockquote {
 
   开发内容:
 
-    - 业务对接、与产品开发沟通协调
-    - 合理分配任务类型，专人专用，提升开发效率，与实现效果
-    - 抽象运营类型业务模块化、提高复用程度
-    - 实现页面中的丰富动画效果与交互等体验
+  - 业务对接、与产品开发沟通协调
+  - 合理分配任务类型，专人专用，提升开发效率，与实现效果
+  - 抽象运营类型业务模块化、提高复用程度
+  - 实现页面中的丰富动画效果与交互等体验
 
   解决问题：
 
-    - 脚本工具化运营需求模块
-    - 月报、榜单类需求归纳总结一套解决方案，实现快速迭代上线
-    - 优化提升端内功能性页面的打开速度与使用体验
+  - 脚本工具化运营需求模块
+  - 月报、榜单类需求归纳总结一套解决方案，实现快速迭代上线
+  - 优化提升端内功能性页面的打开速度与使用体验
+
+- <span style="font-size: 125%">微博PC版</span>
+
+  微博PC业务，包括微博主站、开放平台等业务的基础
+
+  开发内容:
+
+  - 参与微博PC版本V4 V5 V6升级迭代方案制定
+  - 拆分业务、划分基础模块
+  - 代码开发测试上线规范制定
+  - 产品、技术接口
+
+  解决问题：
+
+  - 系统化管理每一个版本
+  - 做好与内部STK框架开发的适配
+  - PC换肤、Bigpipe加载等难点
 
 ***
 
