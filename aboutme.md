@@ -109,12 +109,13 @@ blockquote {
 
 关注设计细节、交互效果，开发效率、前端性能、执行效率、代码可维护性。推动自动化工具、组件标准规范化、工程持续集成。
 
-热爱开源社区、热爱**<span style="color:#4285F4">G</span><span style="color:#DB4437">o</span><span style="color:#F4B400">o</span><span style="color:#4285F4">g</span><span style="color:#0F9D58">l</span><span style="color:#DB4437">e</span>**、热爱Medium、热爱stack **overflow**、热爱尝试。
+热爱开源社区、热爱**<span style="color:#4285F4">G</span><span style="color:#DB4437">o</span><span style="color:#F4B400">o</span><span style="color:#4285F4">g</span><span style="color:#0F9D58">l</span><span style="color:#DB4437">e</span>**、热爱Medium、热爱stack **overflow**、热爱Codepen、热爱尝试。
 
 近期先后开发完成了
 - [Marvel](https://m.weibo.cn){:target="_blank"} Now used by m.weibo.cn
 - [WooUI](https://uxfan.com/wooui){:target="_blank"}
 - [WooUI-Weibo](https://uxfan.com/wooui/weibo){:target="_blank"}
+- [WooUI-pro](https://uxfan.com/wooui/pro){:target="_blank"} For PC
 - [WooUI-Cards]()
 
 等基础依赖。
@@ -126,17 +127,19 @@ blockquote {
 
 先后带领微博开放平台业务线、微博会员增值业务线、微博用户增长业务线的前端团队支持业务开发。负责对接产品需求、制定开发方案、组织协调上下游关系。探索调研业界更优解决方案，定期组织技术分享，与其他团队技术交流。
 
+伴随团队成员成长，根据每个人的不同风格给出合适的技术引导与发展建议。
+
 ***
 
 ## 技能 <sup>skills</sup>
 
-- HTML CSS Javascript
-- Node Gulp Webpack Rollup
-- Sketch PS
-- SVG Canvas
-- PostCSS Sass Less
-- Vue React
-- Git SVN Docker CI
+- 基础: HTML CSS Javascript
+- 脚手架: Node Gulp Webpack Rollup
+- 图形处理: Sketch PS
+- 图形图像: SVG Canvas WebGL
+- CSS预编译: PostCSS Sass Less
+- MVVM: Vue React
+- 工程: Git SVN Docker CI
 
 ***
 
