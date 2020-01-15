@@ -6,6 +6,12 @@ categories: fe React
 comments: true
 ---
 
+是什么驱使我准备用[Create React App](https://create-react-app.dev/docs/getting-started/)^[之后简称CRA] (后文简称CRA)来开发一套UI Component Library呢？因为团队选用了Vue作为基础技术栈，之前习惯了官方开箱即用的[Vue-CLI](https://cli.vuejs.org)非常便捷即可配置完成构建组件库所需的生产环境，比如这套我们内部使用的[wooui-pro](https://uxfan.com/wooui/pro),基于CLI约定配置后便迅速产出了符合团队标准的组件。那么使用React官方提供的CRA，我们是否也能快速打造出标准化的组件库呢？带着疑问开始了探索之旅。
+
+<!--more-->
+
+![Banner](/images/CRA/__banner.png)
+
 ## 引子
 
 是什么驱使我准备用[Create React App](https://create-react-app.dev/docs/getting-started/)^[之后简称CRA] (后文简称CRA)来开发一套UI Component Library呢？因为团队选用了Vue作为基础技术栈，之前习惯了官方开箱即用的[Vue-CLI](https://cli.vuejs.org)非常便捷即可配置完成构建组件库所需的生产环境，比如这套我们内部使用的[wooui-pro](https://uxfan.com/wooui/pro),基于CLI约定配置后便迅速产出了符合团队标准的组件。那么使用React官方提供的CRA，我们是否也能快速打造出标准化的组件库呢？带着疑问开始了探索之旅。
