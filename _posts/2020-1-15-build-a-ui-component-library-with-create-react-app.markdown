@@ -10,7 +10,7 @@ comments: true
 
 <!--more-->
 
-![Banner](/images/CRA/__banner.png)
+![Banner](/images/cra2020/banner.png)
 
 ## 引子
 
