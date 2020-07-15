@@ -283,7 +283,7 @@ yarn add react-styleguidist --dev
 
 （运行结果基于Button组件已经写了[部分代码](https://github.com/supermonkeyz/wooui-react/tree/master/src/components/Button)）
 
-![React Styleguidist Button Component](https://user-gold-cdn.xitu.io/2020/1/11/16f92efad71ec9bd?w=1852&h=2746&f=png&s=167479)
+![React Styleguidist Button Component](/images/cra2020/styleguidist.png)
 
 美如画~ 不，等等，检查元素的时候我刚配置的类名规则怎么又变回来了？仔细想想才发现Styleguidist加载的webpack配置是CRA提供的，那肿么办呢？我们得想办法让Styleguidist调用Rewired来工作，这样`react-app-rewired start`发生的一切才会在`styleguidist server`上发生。可以吗？当然！
 
