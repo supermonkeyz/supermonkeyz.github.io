@@ -6,7 +6,6 @@
   border-bottom: 0.5px solid var(--border-color);
   background-color: var(--site-header-background-color);
   min-height: 80px;
-  animation: show 1s 0.2s ease both;
 
   // Positioning context for the mobile navigation icon
   position: relative;
@@ -230,7 +229,6 @@
 .page-content {
   color: var(--text-main-color);
   padding: $spacing-unit 0;
-  animation: show 1s 0.5s ease both;
 }
 
 .page-heading {
