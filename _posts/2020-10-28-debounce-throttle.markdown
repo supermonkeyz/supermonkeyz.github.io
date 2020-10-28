@@ -1,14 +1,16 @@
 ---
 layout: post
-title:  "Javascipt Debounce Function | JS函数防抖"
+title:  "Javascipt Debounce & Throttle Function | JS防抖截流函数"
 date:   2020-10-28 19:00:41 +0800
 categories: snippet
 comments: true
 ---
 
-## Javascipt Debounce Function
+## Javascipt Debounce & Throttle Function
 
 <!--more-->
+
+### Debounce
 
 ```javascript
 function debounce(fn, wait, immediate) {
@@ -23,11 +25,11 @@ function debounce(fn, wait, immediate) {
       if (!immediate) fn.apply(context, args);
     }
     timer = setTimeout(later, wait);
-  }
+  };
 }
 ```
 
-## 测试代码
+### 测试代码
 
 ```html
 <button id="debounce">debounce</button>
@@ -39,4 +41,32 @@ function testDebounce() {
 }
 
 document.getElementById('debounce').addEventListener('click', debounce(testDebounce, 1000, true));
+```
+
+### Throttle
+
+``` javascript
+function throttle(fn, wait, immediate) {
+  let timer = null;
+  return function() {
+    const context = this;
+    const args = arguments;
+    if (timer || !immediate) return;
+    const later = function() {
+      timer = null;
+      fn.apply(context, args);
+    }
+    timer = setTimeout(later, wait);
+  };
+}
+```
+
+### 测试代码
+
+```javascript
+function testThrottle() {
+  console.log('Throttle Works');
+}
+
+document.documentElement.addEventListener('resize', throttle(testThrottle, 1000, false));
 ```
