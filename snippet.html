@@ -3,5 +3,13 @@ layout: default
 ---
 
 <div class="page-snippet">
-
+  {% for category in site.categories.snippet %}
+    <h3>{{ category | first }} <span class="art-num">({{ category | last | size }})</span></h3>
+  
+    <ul class="art-list">
+        {% for post in category.last %}
+            <li><span class="art-date">{{ post.date | date:"%d/%m/%Y"}}</span><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
 </div>
