@@ -1,12 +1,14 @@
 ---
 layout: post
 title:  "Javascipt Debounce Function | JS函数防抖"
-date:   2020-1-15 13:28:41 +0800
+date:   2020-10-28 19:00:41 +0800
 categories: snippet
 comments: true
 ---
 
 ## Javascipt Debounce Function
+
+<!-- more -->
 
 ```javascript
 function debounce(fn, wait, immediate) {
