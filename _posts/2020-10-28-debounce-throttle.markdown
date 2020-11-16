@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Javascipt Debounce & Throttle Function | JS防抖截流函数"
+title:  "Javascript Debounce & Throttle Function | JS防抖截流函数"
 date:   2020-10-28 19:00:41 +0800
 categories: snippet
 comments: true
 ---
 
-## Javascipt Debounce & Throttle Function
+## Javascript Debounce & Throttle Function
 
 <!--more-->
 
@@ -37,7 +37,7 @@ function debounce(fn, wait, immediate) {
 
 ```javascript
 function testDebounce() {
-  console.log('Dounce Works');
+  console.log('Debounce Works');
 }
 
 document.getElementById('debounce').addEventListener('click', debounce(testDebounce, 1000, true));
@@ -49,12 +49,13 @@ document.getElementById('debounce').addEventListener('click', debounce(testDebou
 function throttle(fn, wait, immediate) {
   let timer = null;
   return function() {
-    const context = this;
-    const args = arguments;
-    if (timer || !immediate) return;
+    var context = this;
+    var args = arguments;
+    if (timer) return;
+    if (immediate) fn.apply(context, args);
     const later = function() {
       timer = null;
-      fn.apply(context, args);
+      if(!immediate) fn.apply(context, args);
     }
     timer = setTimeout(later, wait);
   };
