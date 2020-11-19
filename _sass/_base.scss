@@ -22,6 +22,18 @@
         --border-color: #{lighten(#212121, 25%)};
     }
 }
+
+*::-webkit-scrollbar {
+    width: 6px;
+}
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #666b7a;
+    border-radius: 20px;
+}
+
 /**
  * Reset some basic elements
  */
