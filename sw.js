@@ -7,7 +7,7 @@ if (workbox) {
   workbox.routing.registerRoute(
     /.*\.(?:js|css)/,
     workbox.strategies.cacheFirst({
-      cacheName: 'static-cache-1605758131',
+      cacheName: 'static-cache-1606113658',
     })
   );
 
