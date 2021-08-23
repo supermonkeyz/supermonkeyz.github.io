@@ -10,6 +10,11 @@
   // Positioning context for the mobile navigation icon
   position: relative;
   z-index: 9;
+  overflow: hidden;
+
+  canvas {
+    margin-top: -100px;
+  }
 
   .wrapper {
     text-align: center;
