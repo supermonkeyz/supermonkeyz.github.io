@@ -46,7 +46,6 @@
 
 </footer>
 <script src="/js/index.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script>
   function menuToggle() {
     document.getElementById('dropDownMenu').classList.toggle('show');
@@ -94,20 +93,24 @@ var _hmt = _hmt || [];
 </script>
 <script id="dsq-count-scr" src="//uxfan.disqus.com/count.js" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.net.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.waves.min.js"></script>
 
 <script>
-  var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  VANTA.NET({
-    el: ".site-header",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 400.00,
-    minWidth: 1000.00,
-    scale: 0.5,
-    scaleMobile: 0.5,
-    color: 0xff7000,
-    backgroundColor: dark ? 0x2e2e2e : 0xf2f2f2
-  })
+  let colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+  const setColorScheme = e => {
+    VANTA.WAVES({
+      el: ".site-header",
+      mouseControls: false,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 300,
+      minWidth: 100,
+      scale: 1,
+      scaleMobile: 1,
+      color: e.matches ? 0x2e2e2e : 0xff7000,
+    })
+  }
+
+  setColorScheme(colorSchemeQueryList);
+  colorSchemeQueryList.addListener(setColorScheme);
   </script>
