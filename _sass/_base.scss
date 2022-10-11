@@ -4,22 +4,24 @@
 :root {
     --brand-color: #333;
     --link-hover: #ff7000;
-    --background-color: #fff;
-    --site-header-background-color: #{darken(#fff, 5%)};
+    --background-color: #{rgba(#fff, 0.9)};
+    --site-header-background-color: #{rgba(#fff, 0.9)};
     --text-main-color: #333;
     --text-sub-color: #{lighten(#333, 10%)};
-    --border-color: #{darken(#fff, 25%)};
+    --border-color: #{rgba(darken(#fff, 25%), 0.5)};
+    --animation-bg-opacity: 1;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --brand-color: #ff7000;
         --link-hover: #{lighten(#ff7000, 20%)};
-        --background-color: #212121;
-        --site-header-background-color: #{lighten(#212121, 5%)};
+        --background-color: #{rgba(#212121, 0.9)};
+        --site-header-background-color: #{rgba(#212121, 0.9)};
         --text-main-color: #dedede;
         --text-sub-color: #{darken(#dedede, 10%)};
-        --border-color: #{lighten(#212121, 25%)};
+        --border-color: #{rgba(lighten(#212121, 25%), 0.5)};
+        --animation-bg-opacity: 0.9;
     }
 }
 
@@ -193,30 +195,6 @@ pre {
         padding-left: 0;
     }
 }
-
-
-
-/**
- * Wrapper
- */
-.wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    // @extend %clearfix;
-
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
-}
-
-
 
 /**
  * Clearfix

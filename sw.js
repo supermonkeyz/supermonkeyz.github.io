@@ -1,44 +1,46 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js');
+importScripts(
+  "https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js"
+);
 // var workboxSW = new WorkboxSW();
 if (workbox) {
-  console.log('Workbox is loaded 👌🏼');
+  console.log("Workbox is loaded 👌🏼");
   workbox.precaching.precacheAndRoute([]);
 
   workbox.routing.registerRoute(
     /.*\.(?:js|css)/,
     workbox.strategies.cacheFirst({
-      cacheName: 'static-cache-1629731173',
+      cacheName: "static-cache-1665472660",
     })
   );
 
   workbox.routing.registerRoute(
     /.*\.(?:png|gif|jpg)/,
     workbox.strategies.cacheFirst({
-      cacheName: 'images-cache',
+      cacheName: "images-cache",
       plugins: [
         new workbox.expiration.Plugin({
           maxEntries: 50,
           maxAgeSeconds: 7 * 24 * 60 * 60, // 7 Days
-        })
-      ]
+        }),
+      ],
     })
   );
 
   const articleHandler = workbox.strategies.networkFirst({
-    cacheName: 'articles-cache',
+    cacheName: "articles-cache",
     plugins: [
       new workbox.expiration.Plugin({
         maxEntries: 10,
-      })
-    ]
+      }),
+    ],
   });
 
-  workbox.routing.registerRoute(/\.*/, args => {
-    return articleHandler.handle(args).then(response => {
+  workbox.routing.registerRoute(/\.*/, (args) => {
+    return articleHandler.handle(args).then((response) => {
       if (!response) {
-        return caches.match('/offline.html');
+        return caches.match("/offline.html");
       } else if (response.status === 404) {
-        return caches.match('/offline.html');
+        return caches.match("/offline.html");
       }
       return response;
     });
