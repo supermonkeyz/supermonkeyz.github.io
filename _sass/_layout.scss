@@ -257,6 +257,7 @@
   left: 0;
   opacity: var(--animation-bg-opacity);
   svg {
+    display: block;
     width: 100%;
     height: 100%;
   }
