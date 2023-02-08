@@ -10,13 +10,12 @@ title: 前端体验志 — 关注前端体验
 email: jop@live.cn
 description: HTML,CSS,Javascript,HTML5,CSS3,SVG,Canvas
 
-
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://uxfan.com" # the base hostname & protocol for your site
 twitter_username: jopsay
 weibo_username: jopz
 weibo_nickname: 青春的猴小野
-github_username:  supermonkeyz
+github_username: supermonkeyz
 
 # Build settings
 highlighter: rouge
@@ -24,7 +23,6 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-
 
 excerpt_separator: <!--more-->
 
