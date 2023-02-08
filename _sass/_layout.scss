@@ -10,7 +10,7 @@
   // Positioning context for the mobile navigation icon
   position: relative;
   z-index: 9;
-  overflow: hidden;
+  // overflow: hidden;
 
   canvas {
     margin-top: -100px;
@@ -52,13 +52,15 @@
 }
 
 .site-nav {
+  position: relative;
+  margin-top: -6px;
   .menu-icon {
     display: none;
   }
 
   @include media-query($on-palm) {
     position: absolute;
-    top: 9px;
+    top: 26px;
     right: $spacing-unit / 2;
     background-color: var(--background-color);
     border: 0.5px solid var(--border-color);
@@ -91,9 +93,7 @@
 
     .trigger {
       opacity: 0;
-      transform: scale(0);
       transition: all 0.3s ease-in-out;
-      transform-origin: 18px -18px;
       max-height: 0;
       max-width: 0;
       overflow: hidden;
@@ -101,9 +101,11 @@
 
       &.show {
         opacity: 1;
-        transform: scale(1);
         max-height: 200px;
         max-width: 100px;
+        .toggle-switch {
+          display: block;
+        }
       }
     }
 
@@ -111,6 +113,14 @@
       display: block;
       margin: 0 !important;
       padding: 5px 20px;
+    }
+
+    .toggle-switch {
+      display: none;
+      position: static;
+      padding: 5px 20px;
+      text-align: left;
+      border-top: 1px solid var(--border-color);
     }
   }
 }
@@ -466,4 +476,87 @@ hr {
   100% {
     opacity: 1;
   }
+}
+
+.toggle-switch {
+  position: absolute;
+  right: 0;
+  top: 8px;
+}
+
+.toggle-switch-main {
+  display: inline-flex;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+.toggle-switch-ui {
+  display: inline-block;
+  border: 1px solid var(--border-color);
+  width: 42px;
+  height: 24px;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--border-color);
+    opacity: 0.15;
+  }
+}
+
+.toggle-button {
+  display: block;
+  position: relative;
+  width: 22px;
+  height: 22px;
+  background-color: var(--background-color);
+  border-radius: 20px;
+  margin: 1px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 1px 2px rgba(0, 0, 0, .06);
+  transition: transform 0.15s ease;
+}
+
+.toggle-button svg {
+    width: 14px;
+    height: 14px;
+    color: var(--text-main-color);
+    vertical-align: top;
+}
+
+.toggle-button > i {
+  display: inline-flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle-switch input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+
+.toggle-switch input:checked + .toggle-switch-ui {
+  .toggle-button {
+    transform: translateX(calc(42px - 22px - 1px));
+  }
+  .toggle-icon-sun {
+    opacity: 0;
+  }
+  .toggle-icon-moon {
+    opacity: 1;
+  }
+}
+
+.toggle-icon-sun {
+  opacity: 1;
+}
+.toggle-icon-moon {
+  opacity: 0;
 }

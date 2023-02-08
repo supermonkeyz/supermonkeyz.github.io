@@ -12,17 +12,25 @@
     --animation-bg-opacity: 1;
 }
 
+@mixin dark-theme {
+    --brand-color: #ff7000;
+    --link-hover: #{lighten(#ff7000, 20%)};
+    --background-color: #{rgba(#212121, 0.9)};
+    --site-header-background-color: #{rgba(#212121, 0.9)};
+    --text-main-color: #dedede;
+    --text-sub-color: #{darken(#dedede, 10%)};
+    --border-color: #{rgba(lighten(#212121, 25%), 0.5)};
+    --animation-bg-opacity: 0.9;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
-        --brand-color: #ff7000;
-        --link-hover: #{lighten(#ff7000, 20%)};
-        --background-color: #{rgba(#212121, 0.9)};
-        --site-header-background-color: #{rgba(#212121, 0.9)};
-        --text-main-color: #dedede;
-        --text-sub-color: #{darken(#dedede, 10%)};
-        --border-color: #{rgba(lighten(#212121, 25%), 0.5)};
-        --animation-bg-opacity: 0.9;
+        @include dark-theme;
     }
+}
+
+.theme-dark {
+    @include dark-theme;
 }
 
 *::-webkit-scrollbar {

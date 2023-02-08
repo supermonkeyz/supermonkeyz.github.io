@@ -1,0 +1,19 @@
+<label class="toggle-switch-main">
+    <input type="checkbox" onchange="handleSwitchChange(event)" />
+    <span class="toggle-switch-ui">
+        <i class="toggle-button">
+            <i class="toggle-icon-sun">{% include icon-sun.svg %}</i>
+            <i class="toggle-icon-moon">{% include icon-moon.svg %}</i>
+        </i>
+    </span>
+</label>
+<script>
+function handleSwitchChange(event) {
+    const root = document.documentElement;
+    if (event.currentTarget.checked) {
+        root.classList.add('theme-dark');
+    } else {
+        root.classList.remove('theme-dark');
+    }
+}
+</script>
