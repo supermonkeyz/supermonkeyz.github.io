@@ -5,11 +5,15 @@
   //border-top: 5px solid $grey-color-dark;
   border-bottom: 0.5px solid var(--border-color);
   background-color: var(--site-header-background-color);
-  min-height: 80px;
+  height: $bar-height;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 
   // Positioning context for the mobile navigation icon
-  position: relative;
+  position: fixed;
   z-index: 9;
+  left: 0;
+  right: 0;
   // overflow: hidden;
 
   canvas {
@@ -18,7 +22,7 @@
 
   .wrapper {
     text-align: center;
-    height: 80px;
+    height: $bar-height;
     background: transparent;
     padding: 0;
   }
@@ -174,6 +178,7 @@
   margin-right: auto;
   margin-left: auto;
   padding: $spacing-unit;
+  border-radius: 24px;
   // @extend %clearfix;
 
   @include media-query($on-laptop) {
@@ -278,7 +283,10 @@
  */
 .page-content {
   color: var(--text-main-color);
-  padding: $spacing-unit / 2 0;
+  padding: $bar-height + $spacing-unit / 2 0 $spacing-unit / 2;
+  view-transition-name: page-content;
+  position: relative;
+  z-index: 1;
 }
 
 .page-heading {

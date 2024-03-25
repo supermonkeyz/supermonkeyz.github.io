@@ -33,6 +33,8 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
+$bar-height:       80px;
+
 
 
 // Use media queries like this:
@@ -52,4 +54,5 @@ $on-laptop:        800px;
 @import
     "base",
     "layout",
-    "syntax";
+    "syntax",
+    "view-transition";
