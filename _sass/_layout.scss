@@ -178,8 +178,11 @@
   margin-right: auto;
   margin-left: auto;
   padding: $spacing-unit;
-  border-radius: 24px;
   // @extend %clearfix;
+
+  @include media-query-min($on-laptop) {
+    border-radius: 24px;
+  } 
 
   @include media-query($on-laptop) {
       max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
