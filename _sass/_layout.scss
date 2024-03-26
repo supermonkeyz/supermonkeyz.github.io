@@ -200,9 +200,11 @@
   background-color: var(--site-header-background-color);
   border-top: 0.5px solid var(--border-color);
   padding: $spacing-unit 0;
-  animation: fade 1s 1s ease both;
+  animation: fade 500ms 200ms ease both;
+  overflow: hidden;
   .wrapper {
     background: transparent;
+    animation: showUp 1000ms 200ms ease both;
   }
 }
 
@@ -290,6 +292,10 @@
   view-transition-name: page-content;
   position: relative;
   z-index: 1;
+
+  .wrapper {
+    min-height: calc(100vh - 470px)
+  }
 }
 
 .page-heading {
@@ -471,6 +477,22 @@ hr {
 
   50% {
     transform: translate3d(10%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes showUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -10%, 0);
   }
 
   100% {
