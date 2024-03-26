@@ -28,6 +28,32 @@
   }
 }
 
+.site-progress {
+  position: absolute;
+  width: 100vw;
+  left: 50%;
+  top: $bar-height;
+  transform: translateX(-50%);
+  height: $progress-bar-ht;
+  background-color: $orange-color;
+  transform-origin: 0 50%;
+}
+
+@keyframes grow-progress {
+  from {
+    transform: translateX(-50%) scaleX(0);
+  }
+
+  to {
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+
+.site-progress {
+  animation: grow-progress auto linear both;
+  animation-timeline: scroll();
+}
+
 .site-title {
 
   letter-spacing: -1px;
