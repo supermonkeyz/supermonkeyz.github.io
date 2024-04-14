@@ -103,8 +103,7 @@
 }
 
 .site-nav {
-  position: relative;
-  margin-top: -36px;
+  margin-top: -32px;
   .menu-icon {
     display: none;
   }
@@ -181,6 +180,7 @@
   font-size: 0;
   margin: 0 5px;
   display: inline-block;
+  vertical-align: top;
   padding: 0 10px;
   border-radius: 5px;
 
@@ -561,7 +561,8 @@ hr {
 .toggle-switch {
   position: absolute;
   right: 0;
-  top: 8px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .toggle-switch-main {
