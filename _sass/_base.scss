@@ -183,10 +183,10 @@ blockquote {
  */
 pre,
 code {
-    font-size: 1.25rem;
+    font-size: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 0.25rem;
-    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    font-family: Neon,Menlo,Monaco,Consolas,"Courier New",monospace;
 }
 
 code {
@@ -237,4 +237,12 @@ pre {
 
 .cp_embed_wrapper {
     margin-bottom: 12px;
+}
+
+@font-face {
+    font-family: 'Neon';
+    src:
+        url('../MonaspaceNeon-Regular.woff2') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
