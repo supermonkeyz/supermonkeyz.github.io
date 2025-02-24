@@ -7,7 +7,7 @@ if (workbox) {
   workbox.precaching.precacheAndRoute([]);
 
   workbox.routing.registerRoute(
-    /.*\.(?:js|css)/,
+    /.*\.(?:js|css)(?<!sw\.js)$/,
     workbox.strategies.cacheFirst({
       cacheName: "static-cache-1740221886",
     })
