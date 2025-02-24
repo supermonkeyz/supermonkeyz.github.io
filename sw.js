@@ -14,7 +14,7 @@ if (workbox) {
   );
 
   workbox.routing.registerRoute(
-    /.*\.(?:png|gif|jpg)/,
+    /.*\.(?:js|css)(?<!sw\.js)$/,
     workbox.strategies.cacheFirst({
       cacheName: "images-cache",
       plugins: [
